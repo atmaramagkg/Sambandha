@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "slug": "vrindavana-seven-temples",
+    "title": "Vṛndāvana: seven temples",
+    "title_deva": null,
+    "summary": "A devotional walk through the seven temple tradition, from Madana-mohana to Śyāmasundara.",
+    "body": "This route follows the seven temples remembered together in Vraja's worship tradition. It begins at Madana-mohana, crosses to Govindadeva, then turns through Rādhā-Dāmodara and the Keshī-ghāṭa shrines before finishing at Śyāmasundara in the heart of Vṛndāvana.\n\nAll seven stops now have map pins. Distances are straight-line estimates between them, not measured walking paths through the lanes.",
+    "source_ref": "Curated from Vraja Mandala place and story entries; original route notes; map pins checked 2026-11-25.",
+    "status": "draft",
+    "stories": ["seven-temples-of-vrindavana"],
+    "stops": [
+      {
+        "place": "madana-mohana-temple",
+        "note": "Begin with the Deity who Captures even the mind of Cupid."
+      },
+      {
+        "place": "govindadeva-temple",
+        "note": "Cross east to the great temple of Kṛṣṇa as protector of the cows."
+      },
+      {
+        "place": "radha-damodara-temple",
+        "note": "Near the Yamunā, remembered for closeness and intimate service."
+      },
+      {
+        "place": "radha-ramana-temple",
+        "note": "A small, intimate shrine of Rādhā's loving service."
+      },
+      {
+        "place": "radha-gokulananda-temple",
+        "note": "The temple that keeps the household mood of Nanda's Vraja."
+      },
+      {
+        "place": "radha-gopinatha-temple",
+        "note": "A historic shrine of the gopīs' beloved Deity."
+      },
+      {
+        "place": "radha-syamasundara",
+        "note": "Finish with the dark-hued beloved of Rādhā in Vṛndāvana's centre."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "govardhana-half-day",
+    "title": "Govardhana half-day",
+    "title_deva": null,
+    "summary": "A mapped half-day sample of Govardhana parikrama, from Jatipura to Mānasī Gaṅgā.",
+    "body": "This half-day walk samples the Govardhana parikrama from Jatipura on the hill's western side to Mānasī Gaṅgā on the eastern side. It passes Govinda-kuṇḍa and Surabhi-kuṇḍa, turns through Aaniyor and Dāna-ghāṭī, and ends at the Harideva and Mānasī Devī shrines.\n\nEvery stop is in the Govardhana area, not in Vṛndāvana town. Distances are straight-line estimates between mapped pins; the roads and lanes of the actual parikrama will usually be longer.",
+    "source_ref": "Curated from Vraja Mandala place and story entries; original route notes; map pins checked 2026-11-25.",
+    "status": "draft",
+    "stories": ["govardhana-lifted", "sixteen-deities-of-vajranabha"],
+    "stops": [
+      {
+        "place": "jatipura",
+        "note": "Begin at Jatipura, the western village approach to the sacred hill."
+      },
+      {
+        "place": "govinda-kunda",
+        "note": "A kunda on the Govardhana side, associated with Kṛṣṇa's cowherd pastimes."
+      },
+      {
+        "place": "surabhi-kunda",
+        "note": "Surabhi-kuṇḍa keeps the memory of the wish-fulfilling cow in Vraja."
+      },
+      {
+        "place": "anyora",
+        "note": "Aaniyor is remembered in Vraja tradition for Śrī Śrīnātha."
+      },
+      {
+        "place": "dana-ghati",
+        "note": "Dāna-ghāṭī recalls the giving and bargaining of Kṛṣṇa's dāna-līlā."
+      },
+      {
+        "place": "hari-deva-temple",
+        "note": "Śrī Harideva is traditionally honoured beside Mānasī-gaṅgā."
+      },
+      {
+        "place": "manasi-devi-govardhana",
+        "note": "Finish at Mānasī Devī, the Devī form traditionally installed at Govardhana."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "radha-kunda-circuit",
+    "title": "Rādhā-kuṇḍa circuit",
+    "title_deva": null,
+    "summary": "A mapped loop around the lakes, groves and āśramas of the Rādhā-kuṇḍa area.",
+    "body": "This circuit uses the places around Rādhā-kuṇḍa that already have coordinates in the app. It moves through Nārada-kuṇḍa and Uddhava-kuṇḍa, passes Gvāla-pokharā and Mukharavinda, and turns through Cakaleśvara before reaching a quiet āśrama stop.\n\nThe kundas themselves remain central to meditation here, even where their map pins are still being checked. Distances are straight-line estimates between the located stops.",
+    "source_ref": "Curated from Vraja Mandala place and story entries; original route notes.",
+    "status": "draft",
+    "stories": [],
+    "stops": [
+      {
+        "place": "narada-kunda",
+        "note": "Begin at Nārada-kuṇḍa, named for the sage's remembered presence."
+      },
+      {
+        "place": "uddhava-kunda",
+        "note": "Uddhava-kuṇḍa recalls the messenger who brought Kṛṣṇa's words to Vraja."
+      },
+      {
+        "place": "gvala-pokhara",
+        "note": "A cowherd pond on the quiet approach to the groves."
+      },
+      {
+        "place": "mukharavinda",
+        "note": "Mukharavinda keeps the memory of Kṛṣṇa's lotus-like face in Vraja."
+      },
+      {
+        "place": "cakalesvara-mahadeva",
+        "note": "Cakaleśvara Mahādeva marks the Śiva presence guarding this sector."
+      },
+      {
+        "place": "mahanidhi-swami-ashram",
+        "note": "Finish at a modern āśrama of bhajana in the Rādhā-kuṇḍa area."
+      }
+    ]
+  }
+]

@@ -1,0 +1,559 @@
+[
+  {
+    "id": 1,
+    "slug": "narada",
+    "title": "Nārada Muni",
+    "title_deva": "नारद मुनि",
+    "summary": "The wandering sage who carries the message of devotion from world to world and guides Dhruva, Prahlāda and Vyāsa.",
+    "body": "Nārada is a great sage who travels through the universe singing the glories of Lord Nārāyaṇa, accompanied by his vīṇā. He is described as a mind-born son of Brahmā.\n\nHe appears again and again in the Bhāgavatam at the moment someone is ready to be guided. He instructs the young Dhruva how to worship the Lord, teaches Prahlāda while Prahlāda is still in his mother's womb, and urges Vyāsadeva to describe the Lord's pastimes directly.\n\nNārada also tells the story of his own earlier life, when he was the son of a maidservant and received the mercy of saintly devotees.",
+    "source_ref": "Śrīmad-Bhāgavatam 1.5–1.6; 4.8; 7.7; https://vaniquotes.org/wiki/Category:Personalities_from_Srimad_Bhagavatam",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "dhruva",
+        "role": "Disciple"
+      },
+      {
+        "person": "prahlada",
+        "role": "Disciple (taught before birth)"
+      },
+      {
+        "person": "vyasadeva",
+        "role": "Disciple"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "prahlada",
+    "title": "Prahlāda Mahārāja",
+    "title_deva": "प्रह्लाद महाराज",
+    "summary": "The child devotee who stayed fearless in his devotion while his own father, a powerful king, tried to destroy him.",
+    "body": "Prahlāda was born as the son of the demon king Hiraṇyakaśipu, who hated Lord Viṣṇu. While Prahlāda was still in the womb, the sage Nārada taught his mother about devotion, and the child heard it.\n\nAs a boy, Prahlāda spoke openly to his schoolmates about devotion to the Lord and said that one should begin early, since human life is short and uncertain.\n\nHis father tried many ways to harm him, but Prahlāda remained calm and unafraid. When the Lord appeared as Nṛsiṁha, Prahlāda offered prayers and, when offered any boon, asked only to be free from material desires.",
+    "source_ref": "Śrīmad-Bhāgavatam 7.4–7.10; https://vaniquotes.org/wiki/Category:Personalities_from_Srimad_Bhagavatam",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "narada",
+        "role": "Spiritual master"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "dhruva",
+    "title": "Dhruva Mahārāja",
+    "title_deva": "ध्रुव महाराज",
+    "summary": "A five-year-old prince who left home in sorrow, found the Lord through austerity and devotion, and received a permanent abode.",
+    "body": "Dhruva was the son of King Uttānapāda and his queen Sunīti. Hurt by the harsh words of his stepmother Suruci, he went to his mother, who advised him to take shelter of the Supreme Lord.\n\nHe set out for the forest, met Nārada, and was guided to practise severe austerities on the bank of the Yamunā at Madhuvana.\n\nWhen the Lord appeared before him, Dhruva realised that he no longer wanted what he had come to ask for. He later ruled with devotion and attained the abode known as Dhruvaloka.",
+    "source_ref": "Śrīmad-Bhāgavatam 4.8–4.12; https://vaniquotes.org/wiki/Category:Personalities_from_Srimad_Bhagavatam",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "narada",
+        "role": "Spiritual master"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "ambarisha",
+    "title": "Ambarīṣa Mahārāja",
+    "title_deva": "अम्बरीष महाराज",
+    "summary": "A king who ruled the whole earth yet kept his mind always on the Lord, and whose devotion humbled a mighty sage.",
+    "body": "Ambarīṣa was a great emperor who lived a life of complete devotion. He engaged his mind, speech, hands and senses in service to the Lord, and he regularly observed the vow of Ekādaśī and Dvādaśī.\n\nHis best-known pastime is his meeting with the powerful sage Durvāsā, in which the Lord's Sudarśana cakra protected Ambarīṣa and taught Durvāsā that the Lord is bound by the love of his devotees.",
+    "source_ref": "Śrīmad-Bhāgavatam 9.4–9.5; https://vaniquotes.org/wiki/Category:Personalities_from_Srimad_Bhagavatam",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 5,
+    "slug": "vyasadeva",
+    "title": "Vyāsadeva",
+    "title_deva": "व्यासदेव",
+    "summary": "The sage who arranged the Vedas and compiled the Purāṇas and Mahābhārata, and finally wrote the Śrīmad-Bhāgavatam.",
+    "body": "Vyāsadeva, also known as Veda-Vyāsa, divided the Vedic knowledge into parts so that people could study it, and composed the Purāṇas and the Mahābhārata.\n\nEven after all this work he felt unsatisfied. Nārada explained that he had not yet described the Lord's glories directly. Following this advice, Vyāsa meditated, and then composed the Śrīmad-Bhāgavatam, which he taught to his son Śukadeva.",
+    "source_ref": "Śrīmad-Bhāgavatam 1.4–1.5; 1.7; https://vaniquotes.org/wiki/Category:Personalities_from_Srimad_Bhagavatam",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "narada",
+        "role": "Spiritual master"
+      },
+      {
+        "person": "sukadeva",
+        "role": "Son and student"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "sukadeva",
+    "title": "Śukadeva Gosvāmī",
+    "title_deva": "शुकदेव गोस्वामी",
+    "summary": "The renounced sage who spoke the Śrīmad-Bhāgavatam to King Parīkṣit in the last seven days of the king's life.",
+    "body": "Śukadeva was the son of Vyāsadeva and lived as a completely detached wanderer. He studied the Bhāgavatam under his father.\n\nHe arrived on the bank of the Gaṅgā where King Parīkṣit was sitting, preparing for death, and when asked what a person about to die should hear, he narrated the Bhāgavatam to the king.",
+    "source_ref": "Śrīmad-Bhāgavatam 1.19; 2.1; https://vaniquotes.org/wiki/Category:Personalities_from_Srimad_Bhagavatam",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "vyasadeva",
+        "role": "Father and teacher"
+      },
+      {
+        "person": "parikshit",
+        "role": "Hearer of the Bhāgavatam"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "parikshit",
+    "title": "Parīkṣit Mahārāja",
+    "title_deva": "परीक्षित महाराज",
+    "summary": "The emperor who, knowing he had seven days to live, gave up his kingdom to hear about the Lord from Śukadeva.",
+    "body": "Parīkṣit was a righteous emperor and a grandson of Arjuna. After a sage's son cursed him to die within seven days, he accepted the curse calmly, handed over his kingdom, and sat on the bank of the Gaṅgā.\n\nHis sincere question to Śukadeva Gosvāmī about what a dying person should hear became the occasion for the narration of the entire Śrīmad-Bhāgavatam.",
+    "source_ref": "Śrīmad-Bhāgavatam 1.16–1.19; 2.1; https://vaniquotes.org/wiki/Category:Personalities_from_Srimad_Bhagavatam",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "sukadeva",
+        "role": "Speaker of the Bhāgavatam"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "arjuna",
+    "title": "Arjuna",
+    "title_deva": "अर्जुन",
+    "summary": "The Pāṇḍava warrior who became the hearer of the Bhagavad-gītā when Kṛṣṇa served as his charioteer.",
+    "body": "Arjuna was one of the five Pāṇḍava brothers, a great archer, and a close friend and cousin of Kṛṣṇa.\n\nAt the start of the great war at Kurukṣetra he was overcome by confusion and grief at the sight of his relatives in the opposing army. He accepted Kṛṣṇa as his teacher, and Kṛṣṇa spoke the Bhagavad-gītā to him.",
+    "source_ref": "Bhagavad-gītā 1–2; https://vaniquotes.org/wiki/Category:Personalities_from_Bhagavad_Gita",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "slug": "caitanya-mahaprabhu",
+    "title": "Śrī Caitanya Mahāprabhu",
+    "title_deva": null,
+    "summary": "The Vaiṣṇava saint at the root of the Gauḍīya line followed by the early Vraja Gosvāmīs.",
+    "body": "In the temple notes, Śrī Caitanya Mahāprabhu is the guru and inspiration of the Vṛndāvana Gosvāmīs. He personally instructed Sanātana Gosvāmī for two months in Vārāṇasī, directly empowered Rūpa Gosvāmī, and is accepted in Gauḍīya accounts as the guru of Gadādhara Paṇḍita, Lokanātha and Bhūgarbha.\n\nHe is also described as delighting in Jayadeva's Gīta Govinda at Jagannātha Purī. Jayadeva lived centuries earlier and was not historically part of the Gauḍīya paramparā.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "ishvara-puri",
+        "role": "Dīkṣā-guru"
+      },
+      {
+        "person": "sanatana-gosvami",
+        "role": "Disciple; personally instructed in Vārāṇasī"
+      },
+      {
+        "person": "rupa-gosvami",
+        "role": "Disciple; directly empowered"
+      },
+      {
+        "person": "gadadhara-pandita",
+        "role": "Disciple/associate in Gaura-līlā"
+      },
+      {
+        "person": "gopala-bhatta-gosvami",
+        "role": "Recipient of later association and blessings"
+      },
+      {
+        "person": "lokanatha-gosvami",
+        "role": "Disciple (traditionally accepted)"
+      },
+      {
+        "person": "bhugarbha-gosvami",
+        "role": "Disciple (traditionally accepted)"
+      },
+      {
+        "person": "jayadeva",
+        "role": "Relished his Gīta Govinda in Jagannātha Purī"
+      }
+    ],
+    "id": 9
+  },
+  {
+    "slug": "madhva",
+    "title": "Madhva",
+    "title_deva": null,
+    "summary": "The earlier Vedānta ācārya named at the start of the Gauḍīya lineage lists in these temple notes.",
+    "body": "Madhva is named at the head of the lineage that passes through Mādhavendra Purī, Īśvara Purī and Śrī Caitanya to the Vraja Gosvāmīs. The notes list him as the earlier authority in the line; they do not describe a direct initiation of Mādhavendra by him.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "madhavendra-puri",
+        "role": "Lineage successor"
+      }
+    ],
+    "id": 10
+  },
+  {
+    "slug": "madhavendra-puri",
+    "title": "Mādhavendra Purī",
+    "title_deva": null,
+    "summary": "A saint in the lineage between Madhva and Īśvara Purī.",
+    "body": "Mādhavendra Purī is listed after Madhva and before Īśvara Purī in the paramparā given with the temple notes.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "madhva",
+        "role": "Earlier ācārya in lineage"
+      },
+      {
+        "person": "ishvara-puri",
+        "role": "Disciple in paramparā"
+      }
+    ],
+    "id": 11
+  },
+  {
+    "slug": "ishvara-puri",
+    "title": "Īśvara Purī",
+    "title_deva": null,
+    "summary": "The guru of Śrī Caitanya Mahāprabhu in the lineage given for the Vraja temples.",
+    "body": "Īśvara Purī stands between Mādhavendra Purī and Śrī Caitanya in the lineage list. He is named as the dīkṣā-guru of Mahāprabhu.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "madhavendra-puri",
+        "role": "Guru in paramparā"
+      },
+      {
+        "person": "caitanya-mahaprabhu",
+        "role": "Disciple"
+      }
+    ],
+    "id": 12
+  },
+  {
+    "slug": "sanatana-gosvami",
+    "title": "Sanātana Gosvāmī",
+    "title_deva": null,
+    "summary": "The Gosvāmī associated with Madana-mohana and personally instructed by Śrī Caitanya in Vārāṇasī.",
+    "body": "Sanātana Gosvāmī is named as the main Gosvāmī connected with the Madana-mohana temple. Śrī Caitanya Mahāprabhu is accepted as both his dīkṣā- and śikṣā-guru.\n\nMahāprabhu personally instructed him for two months in Vārāṇasī. Lineage: Madhva → Mādhavendra Purī → Īśvara Purī → Śrī Caitanya → Sanātana Gosvāmī.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "caitanya-mahaprabhu",
+        "role": "Dīkṣā- and śikṣā-guru"
+      }
+    ],
+    "id": 13
+  },
+  {
+    "slug": "rupa-gosvami",
+    "title": "Rūpa Gosvāmī",
+    "title_deva": null,
+    "summary": "The Gosvāmī associated with Govindadeva and a principal theologian of Gauḍīya Vaiṣṇavism.",
+    "body": "Rūpa Gosvāmī is named as the main Gosvāmī connected with the Govindadeva temple. He received direct empowerment and theological instructions from Śrī Caitanya Mahāprabhu, including teachings later expressed in Bhakti-rasāmṛta-sindhu.\n\nLineage: Madhva → Mādhavendra Purī → Īśvara Purī → Śrī Caitanya → Rūpa Gosvāmī.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "caitanya-mahaprabhu",
+        "role": "Dīkṣā-guru and direct empowerer"
+      },
+      {
+        "person": "jiva-gosvami",
+        "role": "Disciple and nephew"
+      }
+    ],
+    "id": 14
+  },
+  {
+    "slug": "gadadhara-pandita",
+    "title": "Gadādhara Paṇḍita",
+    "title_deva": null,
+    "summary": "Accepted in Gaura-līlā as a disciple/associate of Śrī Caitanya and as Mādhupandita's guru.",
+    "body": "Gadādhara Paṇḍita is given as the dīkṣā-guru of Mādhupandita, the Gosvāmī connected with the Gopīnātha temple. Within Gaura-līlā he is accepted as a direct disciple and associate of Śrī Caitanya.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "caitanya-mahaprabhu",
+        "role": "Guru; direct disciple/associate in Gaura-līlā"
+      },
+      {
+        "person": "madhupandita-gosvami",
+        "role": "Disciple"
+      }
+    ],
+    "id": 15
+  },
+  {
+    "slug": "madhupandita-gosvami",
+    "title": "Mādhupandita Gosvāmī",
+    "title_deva": null,
+    "summary": "The Gosvāmī associated with the Gopīnātha temple in Vṛndāvana.",
+    "body": "Mādhupandita is named as the main Gosvāmī connected with Śrī Rādhā-Gopīnātha. His dīkṣā-guru was Gadādhara Paṇḍita.\n\nLineage: Madhva → Mādhavendra Purī → Īśvara Purī → Śrī Caitanya → Gadādhara Paṇḍita → Mādhupandita.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "gadadhara-pandita",
+        "role": "Dīkṣā-guru"
+      }
+    ],
+    "id": 16
+  },
+  {
+    "slug": "jiva-gosvami",
+    "title": "Jīva Gosvāmī",
+    "title_deva": null,
+    "summary": "The principal systematizer of Gauḍīya theology and the Gosvāmī associated with Rādhā-Dāmodara.",
+    "body": "Jīva Gosvāmī is named as the main Gosvāmī connected with the Rādhā-Dāmodara temple. Rūpa Gosvāmī, his uncle, was his dīkṣā-guru. He is considered the principal systematizer of Gauḍīya theology.\n\nLineage: Madhva → Mādhavendra Purī → Īśvara Purī → Śrī Caitanya → Rūpa Gosvāmī → Jīva Gosvāmī.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "rupa-gosvami",
+        "role": "Dīkṣā-guru and uncle"
+      }
+    ],
+    "id": 17
+  },
+  {
+    "slug": "krishnadasa-kaviraja",
+    "title": "Kṛṣṇadāsa Kavirāja Gosvāmī",
+    "title_deva": null,
+    "summary": "Author of Caitanya-caritāmṛta, written in advanced age at Rādhā-Dāmodara.",
+    "body": "Kṛṣṇadāsa Kavirāja Gosvāmī is famous as the author of Caitanya-caritāmṛta. He lived and wrote at Rādhā-Dāmodara in Vṛndāvana.\n\nHis dīkṣā-guru and śikṣā-guru were Raghunātha Dāsa Gosvāmī. He also drew inspiration from Svarūpa Dāmodara through preserved notes. In his later years he wrote Caitanya-caritāmṛta at Rādhā-Dāmodara, systematizing the theology of Rūpa and Raghunātha.\n\nLineage: Madhva → Mādhavendra Purī → Īśvara Purī → Śrī Caitanya → Raghunātha dāsa Gosvāmī → Kṛṣṇadāsa Kavirāja.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "raghunatha-dasa-gosvami",
+        "role": "Dīkṣā- and śikṣā-guru"
+      },
+      {
+        "person": "svarupa-damodara",
+        "role": "Inspiration through preserved notes"
+      },
+      {
+        "person": "rupa-gosvami",
+        "role": "Theology systematized in his writing"
+      }
+    ],
+    "id": 18
+  },
+  {
+    "slug": "raghunatha-dasa-gosvami",
+    "title": "Raghunātha Dāsa Gosvāmī",
+    "title_deva": null,
+    "summary": "The renounced Gosvāmī who was Kṛṣṇadāsa Kavirāja's guru and a link in the Caitanya-caritāmṛta lineage.",
+    "body": "Raghunātha Dāsa Gosvāmī is listed after Śrī Caitanya in the lineage that reaches Kṛṣṇadāsa Kavirāja. The notes name him as both the dīkṣā- and śikṣā-guru of the author of Caitanya-caritāmṛta.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "caitanya-mahaprabhu",
+        "role": "Guru in paramparā"
+      },
+      {
+        "person": "krishnadasa-kaviraja",
+        "role": "Disciple"
+      }
+    ],
+    "id": 19
+  },
+  {
+    "slug": "svarupa-damodara",
+    "title": "Svarūpa Dāmodara",
+    "title_deva": null,
+    "summary": "A source of inspiration for Kṛṣṇadāsa Kavirāja through preserved notes.",
+    "body": "Svarūpa Dāmodara is mentioned as a source of inspiration for Kṛṣṇadāsa Kavirāja through preserved notes, alongside the direct guidance of Raghunātha Dāsa Gosvāmī.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "krishnadasa-kaviraja",
+        "role": "Inspired through preserved notes"
+      }
+    ],
+    "id": 20
+  },
+  {
+    "slug": "jayadeva",
+    "title": "Jayadeva",
+    "title_deva": null,
+    "summary": "The 12th-century poet of Gīta Govinda, influential for Caitanya but not historically in the Gauḍīya paramparā.",
+    "body": "Jayadeva lived in the 12th century, centuries before Mahāprabhu, and was not part of the Gauḍīya paramparā historically. His Gīta Govinda nevertheless deeply influenced Śrī Caitanya Mahāprabhu, who regularly heard and relished it in Jagannātha Purī.\n\nThere is no dīkṣā connection to Caitanya. He is better understood as a previous ācārya in the rāgānugā-bhakti current whose mood was later embraced in Gauḍīya teaching.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "caitanya-mahaprabhu",
+        "role": "Relished Gīta Govinda in Jagannātha Purī; no dīkṣā link"
+      }
+    ],
+    "id": 21
+  },
+  {
+    "slug": "bhugarbha-gosvami",
+    "title": "Bhūgarbha Gosvāmī",
+    "title_deva": null,
+    "summary": "A renounced associate of Lokanātha who helped discover holy places in Vraja.",
+    "body": "Bhūgarbha Gosvāmī is described as a close associate of Lokanātha Gosvāmī. He assisted in discovering holy places in Vṛndāvana and lived in deep renunciation, helping to establish early Vraja bhajana sites.\n\nŚrī Caitanya Mahāprabhu is traditionally accepted as his dīkṣā-guru. Lineage: Madhva → Mādhavendra Purī → Īśvara Purī → Śrī Caitanya → Bhūgarbha Gosvāmī.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "lokanatha-gosvami",
+        "role": "Close associate"
+      },
+      {
+        "person": "caitanya-mahaprabhu",
+        "role": "Dīkṣā-guru (traditionally accepted)"
+      }
+    ],
+    "id": 22
+  },
+  {
+    "slug": "lokanatha-gosvami",
+    "title": "Lokanātha Gosvāmī",
+    "title_deva": null,
+    "summary": "The Gosvāmī connected with Rādhā-Gokulānanda and guru of Narottama Dāsa Ṭhākura.",
+    "body": "Lokanātha Gosvāmī is the Gosvāmī connected with the Rādhā-Gokulānanda temple, where the deities include Vijaya Govinda and Rādhā-Vinoda. Śrī Caitanya Mahāprabhu is traditionally accepted as his dīkṣā-guru.\n\nNarottama Dāsa Ṭhākura is named as his famous disciple. Bhūgarbha Gosvāmī was his close associate in discovering holy places in Vraja.\n\nLineage: Madhva → Mādhavendra Purī → Īśvara Purī → Śrī Caitanya → Lokanātha Gosvāmī.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "caitanya-mahaprabhu",
+        "role": "Dīkṣā-guru (traditionally accepted)"
+      },
+      {
+        "person": "narottama-dasa-thakura",
+        "role": "Famous disciple"
+      },
+      {
+        "person": "bhugarbha-gosvami",
+        "role": "Close associate"
+      }
+    ],
+    "id": 23
+  },
+  {
+    "slug": "gopala-bhatta-gosvami",
+    "title": "Gopāla Bhaṭṭa Gosvāmī",
+    "title_deva": null,
+    "summary": "The Gosvāmī associated with the self-manifested Rādhā-Ramaṇa deity.",
+    "body": "Gopāla Bhaṭṭa Gosvāmī is named as the main Gosvāmī connected with the Rādhā-Ramaṇa temple, whose deity is described as self-manifested from a śālagrāma.\n\nPrabodhānanda Sarasvatī is traditionally accepted as his dīkṣā-guru. The notes also record later association and blessings from Śrī Caitanya Mahāprabhu.\n\nLineage: Madhva → Mādhavendra Purī → Īśvara Purī → Śrī Caitanya → Gopāla Bhaṭṭa Gosvāmī.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "prabodhananda-sarasvati",
+        "role": "Dīkṣā-guru (traditionally accepted)"
+      },
+      {
+        "person": "caitanya-mahaprabhu",
+        "role": "Later association and blessings"
+      }
+    ],
+    "id": 24
+  },
+  {
+    "slug": "prabodhananda-sarasvati",
+    "title": "Prabodhānanda Sarasvatī",
+    "title_deva": null,
+    "summary": "Traditionally accepted as Gopāla Bhaṭṭa Gosvāmī's dīkṣā-guru.",
+    "body": "Prabodhānanda Sarasvatī is named in the notes as the dīkṣā-guru of Gopāla Bhaṭṭa Gosvāmī, with the qualification 'traditionally accepted'.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "gopala-bhatta-gosvami",
+        "role": "Disciple (traditionally accepted)"
+      }
+    ],
+    "id": 25
+  },
+  {
+    "slug": "shyamananda-prabhu",
+    "title": "Śyāmānanda Prabhu",
+    "title_deva": null,
+    "summary": "The Gosvāmī associated with the Rādhā-Śyāmasundara temple.",
+    "body": "Śyāmānanda Prabhu is named as the main Gosvāmī connected with Śrī Rādhā-Śyāmasundara. His dīkṣā-guru was Hṛdaya Caitanya.\n\nLineage: Madhva → Mādhavendra Purī → Īśvara Purī → Śrī Caitanya → Gauridāsa Paṇḍita → Hṛdaya Caitanya → Śyāmānanda.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "hridaya-chaitanya",
+        "role": "Dīkṣā-guru"
+      }
+    ],
+    "id": 26
+  },
+  {
+    "slug": "hridaya-chaitanya",
+    "title": "Hṛdaya Caitanya",
+    "title_deva": null,
+    "summary": "The guru of Śyāmānanda Prabhu in the Rādhā-Śyāmasundara lineage.",
+    "body": "Hṛdaya Caitanya is listed as the dīkṣā-guru of Śyāmānanda Prabhu and as a disciple of Gauridāsa Paṇḍita.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "gauridasa-pandita",
+        "role": "Guru"
+      },
+      {
+        "person": "shyamananda-prabhu",
+        "role": "Disciple"
+      }
+    ],
+    "id": 27
+  },
+  {
+    "slug": "gauridasa-pandita",
+    "title": "Gauridāsa Paṇḍita",
+    "title_deva": null,
+    "summary": "A teacher in the line to Śyāmānanda; his own guru was a direct associate of Śrī Caitanya.",
+    "body": "Gauridāsa Paṇḍita appears between Śrī Caitanya's immediate circle and Hṛdaya Caitanya in the lineage given for the Rādhā-Śyāmasundara temple. The notes say that Gauridāsa's guru was a direct associate of Śrī Caitanya; they do not name that associate.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "hridaya-chaitanya",
+        "role": "Disciple"
+      }
+    ],
+    "id": 28
+  },
+  {
+    "slug": "narottama-dasa-thakura",
+    "title": "Narottama Dāsa Ṭhākura",
+    "title_deva": null,
+    "summary": "The famous disciple of Lokanātha Gosvāmī.",
+    "body": "Narottama Dāsa Ṭhākura is named in the notes as the famous disciple of Lokanātha Gosvāmī, the Gosvāmī connected with Rādhā-Gokulānanda.",
+    "source_ref": "User-provided notes on Vṛndāvana temples and Gauḍīya lineage; https://vaniquotes.org/wiki/Category:Personalities_from_Sri_Caitanya_Caritamrta",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "lokanatha-gosvami",
+        "role": "Guru"
+      }
+    ],
+    "id": 29
+  },
+  {
+    "slug": "vajranabha",
+    "title": "Vajranābha",
+    "title_deva": null,
+    "summary": "The figure traditionally credited with installing sixteen principal deities across Vraja Maṇḍala.",
+    "body": "According to traditional sources, including purāṇic descriptions linked to the Ādi-Varāha Purāṇa and Vraja lore, Vajranābha installed at least sixteen important deities at sacred spots in and around Vraja Maṇḍala.\n\nThe set is described as four principal Devas, four Gopāla forms, four Śiva liṅgas (Dik-pālas), and four Devīs. These installations are associated with places such as Vṛndāvana, Mathurā, Govardhana and Kāmyavana.\n\nThese notes are a draft summary of traditional accounts rather than an independently verified historical survey.",
+    "source_ref": "User-provided notes on deities traditionally installed by Vajranābha (including Adi-Varaha Purāṇa-linked Vraja lore)",
+    "status": "draft",
+    "relations": [],
+    "id": 30
+  }
+]

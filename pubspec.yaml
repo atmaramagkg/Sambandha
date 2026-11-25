@@ -1,0 +1,43 @@
+name: vraja_mandala
+description: Browse the stories of holy personalities and places of Vraja.
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.5.1
+  go_router: ^14.2.0
+  sqflite: ^2.3.3
+  sqflite_common_ffi: ^2.4.7
+  path: ^1.9.0
+  path_provider: ^2.1.5
+  shared_preferences: ^2.3.2
+  flutter_map: ^8.3.2
+  latlong2: ^0.10.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.4
+
+# Generated with: dart run flutter_launcher_icons
+flutter_launcher_icons:
+  image_path: "assets/icon/app_icon.png"
+  # Add android/ios after generating those platform folders:
+  # android: true
+  # ios: true
+  windows:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+    icon_size: 256
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/db/
+    - assets/images/maps/
