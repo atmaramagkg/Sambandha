@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vraja_mandala/data/models.dart';
+import 'package:vraja_mandala/widgets/common.dart';
 
 void main() {
   test('entity kind round-trips through its route key', () {
@@ -40,5 +42,37 @@ void main() {
     expect(entry.latitude, 27.509);
     expect(entry.longitude, 77.479);
     expect(entry.hasCoordinates, isTrue);
+  });
+
+  testWidgets('BottomSafeArea reserves only the bottom system inset',
+      (tester) async {
+    await tester.binding.setSurfaceSize(const Size(400, 800));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+
+    await tester.pumpWidget(
+      MediaQuery(
+        data: const MediaQueryData(
+          size: Size(400, 800),
+          padding: EdgeInsets.fromLTRB(10, 24, 10, 48),
+        ),
+        child: Directionality(
+          textDirection: TextDirection.ltr,
+          child: BottomSafeArea(
+            child: Container(
+              key: const Key('safe-content'),
+              width: double.infinity,
+              height: double.infinity,
+              color: Colors.blue,
+            ),
+          ),
+        ),
+      ),
+    );
+
+    final rect = tester.getRect(find.byKey(const Key('safe-content')));
+    expect(rect.top, 0);
+    expect(rect.left, 0);
+    expect(rect.right, 400);
+    expect(rect.bottom, 800 - 48);
   });
 }

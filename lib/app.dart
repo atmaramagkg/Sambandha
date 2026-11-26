@@ -11,6 +11,7 @@ import 'screens/route_detail_screen.dart';
 import 'screens/routes_screen.dart';
 import 'screens/saved_screen.dart';
 import 'screens/search_screen.dart';
+import 'widgets/common.dart';
 
 final _router = GoRouter(
   routes: [
@@ -57,6 +58,8 @@ class VrajaMandalaApp extends StatelessWidget {
       title: 'Vraja Mandala',
       debugShowCheckedModeBanner: false,
       routerConfig: _router,
+      builder: (context, child) =>
+          BottomSafeArea(child: child ?? const SizedBox.shrink()),
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: seed),

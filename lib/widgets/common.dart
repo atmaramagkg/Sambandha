@@ -11,6 +11,26 @@ IconData iconForKind(EntityKind kind) => switch (kind) {
       EntityKind.story => Icons.auto_stories_outlined,
     };
 
+/// Keeps Android's three-button navigation strip from covering app controls.
+///
+/// Applied around the whole app so every route inherits the inset. The top,
+/// left and right insets are left to each Scaffold/AppBar.
+class BottomSafeArea extends StatelessWidget {
+  const BottomSafeArea({super.key, required this.child});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      top: false,
+      left: false,
+      right: false,
+      child: child,
+    );
+  }
+}
+
 /// Shows loading and error states around an [AsyncValue].
 class AsyncBody<T> extends StatelessWidget {
   const AsyncBody({super.key, required this.value, required this.builder});
