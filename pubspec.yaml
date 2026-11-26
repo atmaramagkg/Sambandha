@@ -28,8 +28,8 @@ dev_dependencies:
 # Generated with: dart run flutter_launcher_icons
 flutter_launcher_icons:
   image_path: "assets/icon/app_icon.png"
-  # Add android/ios after generating those platform folders:
-  # android: true
+  android: true
+  # Add ios after generating that platform folder:
   # ios: true
   windows:
     generate: true
