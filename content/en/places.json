@@ -4027,7 +4027,11 @@
     "summary": "Belvana is the same forest as Bilvavana and Śrīvana, and it lies at the edge of Māna-sarovara on the eighth forest of Vraja.",
     "body": "Belvana is the same forest as Bilvavana and Śrīvana, and it lies at the edge of Māna-sarovara on the eighth forest of Vraja. Its name comes from the bilva, or bel, rose-apple trees growing there, and from the goddess of fortune, Śrī, who still performs austerities here to attain love like that of the gopīs. Caitanya Mahāprabhu visited this forest and recalled while resting here how Kṛṣṇa and the cowherd boys had played. Tradition says that bathing in Māna-sarovara with pure motives transforms a person into a gopī.",
     "source_ref": "User-provided notes on Vraja holy places",
-    "status": "draft"
+    "status": "draft",
+    "latitude": 27.6014809,
+    "longitude": 77.6844417,
+    "coordinate_confidence": "approximate",
+    "coordinate_source": "OpenStreetMap Nominatim (query: Belvan)"
   },
   {
     "id": 373,
@@ -4931,7 +4935,11 @@
     "summary": "This lake lies not far from Praskandana-kuṇḍa, where Kṛṣṇa invoked the Ganges for the sake of His companions.",
     "body": "This lake lies not far from Praskandana-kuṇḍa, where Kṛṣṇa invoked the Ganges for the sake of His companions. A bath here is equal to one hundred baths in the Ganges River itself. It also records that Lord Caitanya, during His visit to Vṛndāvana, came to Dvādaśāditya-ṭīlā and appreciated its secluded and sacred atmosphere.",
     "source_ref": "User-provided notes on Vraja holy places",
-    "status": "draft"
+    "status": "draft",
+    "latitude": 27.5755103,
+    "longitude": 77.688321,
+    "coordinate_confidence": "approximate",
+    "coordinate_source": "OpenStreetMap Nominatim (query: Ganga kund)"
   },
   {
     "id": 459,
@@ -5281,7 +5289,11 @@
     "summary": "Harideva-kuṇḍa, also sometimes called Pañca-tīrtha-kuṇḍa, appears mainly in devotional accounts's notes.",
     "body": "Harideva-kuṇḍa, also sometimes called Pañca-tīrtha-kuṇḍa, appears mainly in devotional accounts's notes. The notes say Kṛṣṇa and the gopas enjoyed playing ball there, so the area is known as Kanduka-kṣetra, the ball field. Beyond that tradition says little about it.",
     "source_ref": "User-provided notes on Vraja holy places",
-    "status": "draft"
+    "status": "draft",
+    "latitude": 27.4968921,
+    "longitude": 77.4642869,
+    "coordinate_confidence": "approximate",
+    "coordinate_source": "OpenStreetMap Nominatim (query: Harideva kund)"
   },
   {
     "id": 492,
@@ -5859,7 +5871,11 @@
     "summary": "Kāmanā-kuṇḍa is a lake next to Vimala-kuṇḍa in Kāmyavana, whose water is said to be composed of kāma, the liquid essence of that forest.",
     "body": "Kāmanā-kuṇḍa is a lake next to Vimala-kuṇḍa in Kāmyavana, whose water is said to be composed of kāma, the liquid essence of that forest. A bath there can fulfil the spiritual desires of those pure in heart. The gopīs, who know the lake's secret, come there to worship and bathe with great devotion, and Kṛṣṇa appears there to reciprocate their pure kāma.",
     "source_ref": "User-provided notes on Vraja holy places",
-    "status": "draft"
+    "status": "draft",
+    "latitude": 27.6424971,
+    "longitude": 77.2752117,
+    "coordinate_confidence": "approximate",
+    "coordinate_source": "OpenStreetMap Nominatim (query: Kamana kund)"
   },
   {
     "id": 547,
@@ -5947,7 +5963,11 @@
     "summary": "Kṛṣṇa-kuṇḍa is another name for Madhu-kuṇḍa, in the area of the ancient city of Maholī in Madhuvana.",
     "body": "Kṛṣṇa-kuṇḍa is another name for Madhu-kuṇḍa, in the area of the ancient city of Maholī in Madhuvana. The best-known pastime here is a quarrel: Kṛṣṇa was late for a meeting with Rādhārāṇī, and she sulked in a grove of Bahulāvana. The gopīs searched for her and found her on the bank of Kṛṣṇa-kuṇḍa, and with their help Kṛṣṇa won her back. The lake has since also been called Māna-sarovara, and traditional accounts include verses praising its groves and fragrance.",
     "source_ref": "User-provided notes on Vraja holy places",
-    "status": "draft"
+    "status": "draft",
+    "latitude": 27.6431876,
+    "longitude": 77.3674196,
+    "coordinate_confidence": "approximate",
+    "coordinate_source": "OpenStreetMap Nominatim (query: Krishna kund)"
   },
   {
     "id": 555,
@@ -6347,7 +6367,11 @@
     "summary": "Mohana-kuṇḍa lies next to Lalitā-kuṇḍa, and the two lakes appeared when Lalitā and Kṛṣṇa shared memories of their encounters with Rādhā.",
     "body": "Mohana-kuṇḍa lies next to Lalitā-kuṇḍa, and the two lakes appeared when Lalitā and Kṛṣṇa shared memories of their encounters with Rādhā. When Lalitā's lake overflowed, it formed another lake, which she named Mohana-kuṇḍa after Kṛṣṇa. After killing the demon Ariṣṭāsura, Kṛṣṇa bathed in both lakes, and when Rādhā insisted He was contaminated by the sin of killing a bull, He replied that He had already bathed in Lalitā's lake.",
     "source_ref": "User-provided notes on Vraja holy places",
-    "status": "draft"
+    "status": "draft",
+    "latitude": 27.5252663,
+    "longitude": 77.4945399,
+    "coordinate_confidence": "approximate",
+    "coordinate_source": "OpenStreetMap Nominatim (query: Mohana kund)"
   },
   {
     "id": 591,
@@ -8303,7 +8327,11 @@
     "summary": "Vṛndā-kuñja is the tranquil grove that is the permanent residence of Vṛndā-devī, found in the secluded area near Nandagrāma.",
     "body": "Vṛndā-kuñja is the tranquil grove that is the permanent residence of Vṛndā-devī, found in the secluded area near Nandagrāma. From here she keeps groves and cottages throughout Vraja stocked with everything Kṛṣṇa needs for His pastimes, assisted by sylvan goddesses. Devotional accounts describe her as the choreographer of Kṛṣṇa's pastimes, with Yogamāyā Paurṇamāsī-devī as their director.",
     "source_ref": "User-provided notes on Vraja holy places",
-    "status": "draft"
+    "status": "draft",
+    "latitude": 27.5845022,
+    "longitude": 77.7033788,
+    "coordinate_confidence": "approximate",
+    "coordinate_source": "OpenStreetMap Nominatim (query: Vrinda kunj)"
   },
   {
     "id": 777,
@@ -8313,7 +8341,11 @@
     "summary": "Vṛndā-kuṇḍa lies next to Gupta-kuṇḍa, opposite Akrūra-sthāna, and is the headquarters of Vraja's strategic command.",
     "body": "Vṛndā-kuṇḍa lies next to Gupta-kuṇḍa, opposite Akrūra-sthāna, and is the headquarters of Vraja's strategic command. Here Vṛndā-devī, Paurṇamāsī and Nāndīmukhī meet to plan Kṛṣṇa's daily itinerary. Tradition adds that it is the home of Vṛndā-devī's messenger, the parrot Dakṣa, who flies over Vṛndāvana and reports the day's events to her.",
     "source_ref": "User-provided notes on Vraja holy places",
-    "status": "draft"
+    "status": "draft",
+    "latitude": 27.7111986,
+    "longitude": 77.3699807,
+    "coordinate_confidence": "approximate",
+    "coordinate_source": "OpenStreetMap Nominatim (query: Vrinda kund)"
   },
   {
     "id": 778,

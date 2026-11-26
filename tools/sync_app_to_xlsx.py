@@ -98,13 +98,18 @@ def cell_text(cell, strings):
     return value.text if value is not None else ""
 
 
+def strip_prefixed_attrs(xml):
+    """Drop Excel revision attributes whose namespace is declared only on root."""
+    return re.sub(r'\s+[\w-]+:[\w-]+="[^"]*"', "", xml)
+
+
 def row_cells(row_xml):
     raw = {}
     for match in re.finditer(r'<c r="([A-Z]+\d+)"[^>]*(?:/>|>.*?</c>)', row_xml):
         raw[col_of(match.group(1))] = match.group(0)
     wrapped = (
         '<root xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">'
-        + row_xml
+        + strip_prefixed_attrs(row_xml)
         + "</root>"
     )
     parsed = ET.fromstring(wrapped)
