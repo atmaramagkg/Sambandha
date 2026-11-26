@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../data/models.dart';
 import '../providers.dart';
+import '../utils/place_categories.dart';
 import '../widgets/common.dart';
 
 enum _PlaceGroup { all, mapped, unmapped }
@@ -39,6 +40,7 @@ class ListScreen extends ConsumerStatefulWidget {
 
 class _ListScreenState extends ConsumerState<ListScreen> {
   _PlaceGroup _group = _PlaceGroup.all;
+  PlaceCategory _category = PlaceCategory.all;
 
   @override
   Widget build(BuildContext context) {
@@ -61,38 +63,62 @@ class _ListScreenState extends ConsumerState<ListScreen> {
             return _EntryList(entries: list);
           }
 
-          final counts = {
+          final groupCounts = {
             _PlaceGroup.all: list.length,
             _PlaceGroup.mapped: list.where((e) => e.hasCoordinates).length,
             _PlaceGroup.unmapped: list.where((e) => !e.hasCoordinates).length,
           };
-          final grouped = switch (_group) {
+          final inGroup = switch (_group) {
             _PlaceGroup.all => list,
             _PlaceGroup.mapped =>
               list.where((e) => e.hasCoordinates).toList(),
             _PlaceGroup.unmapped =>
               list.where((e) => !e.hasCoordinates).toList(),
           };
+          final categoryCounts = {
+            for (final category in PlaceCategory.values)
+              category: category == PlaceCategory.all
+                  ? inGroup.length
+                  : inGroup
+                      .where((e) => categoryForTitle(e.title) == category)
+                      .length,
+          };
+          final visible = _category == PlaceCategory.all
+              ? inGroup
+              : inGroup
+                  .where((e) => categoryForTitle(e.title) == _category)
+                  .toList();
+          final emptyMessage = inGroup.isEmpty
+              ? _group.emptyMessage
+              : 'No ${_category.label.toLowerCase()} in this group.';
 
           return Column(
             children: [
               _PlaceGroupBar(
                 group: _group,
-                counts: counts,
-                onChanged: (group) => setState(() => _group = group),
+                counts: groupCounts,
+                onChanged: (group) => setState(() {
+                  _group = group;
+                  _category = PlaceCategory.all;
+                }),
+              ),
+              _CategoryBar(
+                selected: _category,
+                counts: categoryCounts,
+                onChanged: (category) => setState(() => _category = category),
               ),
               Expanded(
-                child: grouped.isEmpty
+                child: visible.isEmpty
                     ? Center(
                         child: Padding(
                           padding: const EdgeInsets.all(24),
                           child: Text(
-                            _group.emptyMessage,
+                            emptyMessage,
                             textAlign: TextAlign.center,
                           ),
                         ),
                       )
-                    : _EntryList(entries: grouped),
+                    : _EntryList(entries: visible),
               ),
             ],
           );
@@ -142,6 +168,55 @@ class _PlaceGroupBar extends StatelessWidget {
                   avatar: Icon(option.icon, size: 16),
                   label: Text('${option.label} (${counts[option] ?? 0})'),
                   selected: option == group,
+                  onSelected: (_) => onChanged(option),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _CategoryBar extends StatelessWidget {
+  const _CategoryBar({
+    required this.selected,
+    required this.counts,
+    required this.onChanged,
+  });
+
+  final PlaceCategory selected;
+  final Map<PlaceCategory, int> counts;
+  final ValueChanged<PlaceCategory> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(color: Theme.of(context).dividerColor),
+        ),
+      ),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 8),
+              child: Text(
+                'Category',
+                style: Theme.of(context).textTheme.labelLarge,
+              ),
+            ),
+            for (final option in PlaceCategory.values)
+              Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: ChoiceChip(
+                  avatar: Icon(option.icon, size: 16),
+                  label: Text('${option.label} (${counts[option] ?? 0})'),
+                  selected: option == selected,
                   onSelected: (_) => onChanged(option),
                 ),
               ),
