@@ -63,6 +63,17 @@ the content description first. Clear matches can then be copied into
 `content/en/places.json` with `latitude`, `longitude`,
 `coordinate_confidence` and `coordinate_source`.
 
+The Excel workbook is a downstream copy of the app data. After content or
+coordinate changes, sync it with:
+
+```
+python tools/sync_app_to_xlsx.py --apply
+```
+
+This overwrites `C:\Users\austr\OneDrive\Documents\holy_places.xlsx`, updates
+coordinates, confidence, provenance, descriptions and app IDs, and keeps a
+backup in the temporary folder. Run without `--apply` for a dry run.
+
 ## Map
 
 The **Map of holy places** screen starts at central Vṛndāvana. Tap the map to
