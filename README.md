@@ -33,7 +33,9 @@ Content lives in `content/en/` as three JSON files: `people.json`,
   optional note on each stop. It may also list related `stories` by slug.
 - A place may include optional `latitude` and `longitude` numbers. Set both
   together; they are stored in the database and are used by the map's
-  1/3/5/10/20 km radius filter and by guided-route distances.
+  1/3/5/10/20 km radius filter and by guided-route distances. A place can also
+  carry `coordinate_confidence` (`high` or `approximate`) and
+  `coordinate_source` so later reviews know where a pin came from.
 - Rebuild the database after any change:
 
   ```

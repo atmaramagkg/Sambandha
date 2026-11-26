@@ -29,6 +29,7 @@ CONTENT = ROOT / "content"
 OUT_DIR = ROOT / "assets" / "db"
 BASE_LANG = "en"
 STATUSES = {"draft", "reviewed"}
+COORDINATE_CONFIDENCES = {"high", "approximate"}
 
 # User-facing text must never name or point back to the source book used to
 # prepare the notes. Keep descriptions in the app's own words instead.
@@ -52,6 +53,7 @@ CREATE TABLE place (
   title TEXT NOT NULL, title_deva TEXT, summary TEXT NOT NULL,
   body TEXT NOT NULL, source_ref TEXT NOT NULL, status TEXT NOT NULL,
   latitude REAL, longitude REAL,
+  coordinate_confidence TEXT, coordinate_source TEXT,
   PRIMARY KEY (id, lang)
 );
 CREATE TABLE story (
@@ -187,13 +189,20 @@ def main():
                         fail(f"{lang}/{kind} '{rec['slug']}': latitude must be a number")
                     if lng is not None and not isinstance(lng, (int, float)):
                         fail(f"{lang}/{kind} '{rec['slug']}': longitude must be a number")
+                    confidence = rec.get("coordinate_confidence")
+                    coordinate_source = rec.get("coordinate_source")
+                    if confidence is not None and confidence not in COORDINATE_CONFIDENCES:
+                        fail(f"{lang}/{kind} '{rec['slug']}': unknown coordinate_confidence")
+                    if lat is None and (confidence is not None or coordinate_source is not None):
+                        fail(f"{lang}/{kind} '{rec['slug']}': coordinate metadata needs coordinates")
                     con.execute(
                         "INSERT INTO place (id, slug, lang, title, title_deva, summary, "
-                        "body, source_ref, status, latitude, longitude) "
-                        "VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+                        "body, source_ref, status, latitude, longitude, "
+                        "coordinate_confidence, coordinate_source) "
+                        "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
                         (rec["id"], rec["slug"], lang, rec["title"], rec.get("title_deva"),
                          rec["summary"], rec["body"], rec["source_ref"], rec["status"],
-                         lat, lng),
+                         lat, lng, confidence, coordinate_source),
                     )
                 else:
                     con.execute(
