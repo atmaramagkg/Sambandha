@@ -1,0 +1,1411 @@
+{
+  "generated_at": "2026-11-26T02:35:28+00:00",
+  "source": "OpenStreetMap Nominatim",
+  "bbox_lon_lat": [
+    77.1,
+    27.2,
+    78.1,
+    28.0
+  ],
+  "categories": [
+    "Ghāṭas",
+    "Hills & caves",
+    "Temples & deities",
+    "Towns & regions",
+    "Villages"
+  ],
+  "review_status": "unreviewed",
+  "note": "Candidates only. Do not apply without human review.",
+  "entries": [
+    {
+      "id": 1,
+      "title": "Mathurā",
+      "category": "Towns & regions",
+      "queries": [
+        "mathura",
+        "mathura, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": [
+        {
+          "latitude": 27.4955539,
+          "longitude": 77.6855554,
+          "display_name": "Mathura, Uttar Pradesh, 281001, India",
+          "osm_type": "node",
+          "osm_id": 568283868,
+          "category": "place",
+          "type": "city",
+          "query": "mathura",
+          "score": 10,
+          "confidence": "high"
+        },
+        {
+          "latitude": 27.633333,
+          "longitude": 77.583333,
+          "display_name": "Mathura, Uttar Pradesh, India",
+          "osm_type": "relation",
+          "osm_id": 1958146,
+          "category": "boundary",
+          "type": "administrative",
+          "query": "mathura",
+          "score": 9,
+          "confidence": "high"
+        },
+        {
+          "latitude": 27.4428095,
+          "longitude": 77.5723609,
+          "display_name": "Mathura, Uttar Pradesh, India",
+          "osm_type": "relation",
+          "osm_id": 10000773,
+          "category": "boundary",
+          "type": "administrative",
+          "query": "mathura",
+          "score": 9,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Govardhana Hill",
+      "category": "Hills & caves",
+      "queries": [
+        "govardhan hill",
+        "govardhan hill, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 5,
+      "title": "Kurukṣetra",
+      "category": "Towns & regions",
+      "queries": [
+        "kurukshetra",
+        "kurukshetra, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 20,
+      "title": "Nanda-grāma",
+      "category": "Villages",
+      "queries": [
+        "nanda gram",
+        "nanda gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 21,
+      "title": "Varṣāṇa",
+      "category": "Towns & regions",
+      "queries": [
+        "varshana",
+        "varshana, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 22,
+      "title": "Yamunā",
+      "category": "Ghāṭas",
+      "queries": [
+        "yamuna",
+        "yamuna, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": [
+        {
+          "latitude": 27.299512,
+          "longitude": 77.9586173,
+          "display_name": "Yamuna, Mahavan, Mathura, Uttar Pradesh, 283121, India",
+          "osm_type": "way",
+          "osm_id": 175665401,
+          "category": "waterway",
+          "type": "river",
+          "query": "yamuna",
+          "score": 9,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Sri Durvasa Rsi Gaudiya Asrama",
+      "category": "Temples & deities",
+      "queries": [
+        "sri durvasa rsi gaudiya asrama",
+        "sri durvasa rsi gaudiya asrama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 25,
+      "title": "Gopinatha Bhavana",
+      "category": "Temples & deities",
+      "queries": [
+        "gopinatha bhavana",
+        "gopinatha bhavana, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 28,
+      "title": "Srila Prabhodananda Sarasvati's bhajana-kutira and samadhi",
+      "category": "Temples & deities",
+      "queries": [
+        "srila prabhodananda sarasvati s bhajana kutira and samadhi",
+        "srila prabhodananda sarasvati s bhajana kutira and samadhi, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 29,
+      "title": "Srila Sanatana Gosvami's bhajana-kutira and samadhi",
+      "category": "Temples & deities",
+      "queries": [
+        "srila sanatana gosvami s bhajana kutira and samadhi",
+        "srila sanatana gosvami s bhajana kutira and samadhi, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 57,
+      "title": "Garuda-Govinda",
+      "category": "Temples & deities",
+      "queries": [
+        "garuda govinda",
+        "garuda govinda, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 62,
+      "title": "Sri Giridhari Gaudiya Matha",
+      "category": "Temples & deities",
+      "queries": [
+        "sri giridhari gaudiya math",
+        "sri giridhari gaudiya math, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 76,
+      "title": "Pichala-pahadi",
+      "category": "Hills & caves",
+      "queries": [
+        "pichala pahadi",
+        "pichala pahadi, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 77,
+      "title": "Vyomasura's cave",
+      "category": "Hills & caves",
+      "queries": [
+        "vyomasura s cave",
+        "vyomasura s cave, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 79,
+      "title": "Vrinda-devi and Kamesvara Mahadeva",
+      "category": "Temples & deities",
+      "queries": [
+        "vrinda devi and kamesvara mahadeva",
+        "vrinda devi and kamesvara mahadeva, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 90,
+      "title": "Choti Carana-pahadi",
+      "category": "Hills & caves",
+      "queries": [
+        "choti carana pahadi",
+        "choti carana pahadi, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 98,
+      "title": "Ananda-dhama",
+      "category": "Towns & regions",
+      "queries": [
+        "ananda dhama",
+        "ananda dhama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 106,
+      "title": "Sriji Temple",
+      "category": "Temples & deities",
+      "queries": [
+        "sriji temple",
+        "sriji temple, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 108,
+      "title": "Uchagaon",
+      "category": "Villages",
+      "queries": [
+        "uchagaon",
+        "uchagaon, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 109,
+      "title": "Sakhigiri-parvata",
+      "category": "Hills & caves",
+      "queries": [
+        "sakhigiri parvata",
+        "sakhigiri parvata, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 116,
+      "title": "Sri Keshavadeva, Mathurā",
+      "category": "Towns & regions",
+      "queries": [
+        "sri keshavadeva mathura",
+        "sri keshavadeva mathura, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 119,
+      "title": "Sri Yogamaya Devi, Yoga-pīṭha",
+      "category": "Temples & deities",
+      "queries": [
+        "sri yogamaya devi yoga pitha",
+        "sri yogamaya devi yoga pitha, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 121,
+      "title": "Sri Patala Devi, Mathurā",
+      "category": "Temples & deities",
+      "queries": [
+        "sri patala devi mathura",
+        "sri patala devi mathura, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 156,
+      "title": "Kedāranātha",
+      "category": "Temples & deities",
+      "queries": [
+        "kedaranatha",
+        "kedaranatha, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 157,
+      "title": "Indrasena-parvata",
+      "category": "Hills & caves",
+      "queries": [
+        "indrasena parvata",
+        "indrasena parvata, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 158,
+      "title": "Āṭora-parvata",
+      "category": "Hills & caves",
+      "queries": [
+        "atora parvata",
+        "atora parvata, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 159,
+      "title": "Brahma-parvata",
+      "category": "Hills & caves",
+      "queries": [
+        "brahma parvata",
+        "brahma parvata, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 160,
+      "title": "Nandīśvara",
+      "category": "Temples & deities",
+      "queries": [
+        "nandishvara",
+        "nandishvara, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 161,
+      "title": "Viṣṇu-parvata",
+      "category": "Hills & caves",
+      "queries": [
+        "vishnu parvata",
+        "vishnu parvata, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 177,
+      "title": "Govinda",
+      "category": "Temples & deities",
+      "queries": [
+        "govinda",
+        "govinda, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": [
+        {
+          "latitude": 27.5742277,
+          "longitude": 77.6993779,
+          "display_name": "Govinda Kund, Mathura Road, Vrindavan, Mathura, Uttar Pradesh, 281121, India",
+          "osm_type": "way",
+          "osm_id": 99427126,
+          "category": "amenity",
+          "type": "place_of_worship",
+          "query": "govinda",
+          "score": 8,
+          "confidence": "high"
+        },
+        {
+          "latitude": 27.567489,
+          "longitude": 77.6759712,
+          "display_name": "Sri Sri Radha Govinda Mandir, Parikram Marg, Vrindavan, Mathura, Uttar Pradesh, 281121, India",
+          "osm_type": "node",
+          "osm_id": 4648837991,
+          "category": "amenity",
+          "type": "place_of_worship",
+          "query": "govinda",
+          "score": 8,
+          "confidence": "high"
+        },
+        {
+          "latitude": 27.5766733,
+          "longitude": 77.6802992,
+          "display_name": "Govinda Garden Cafe, Parikram Marg, Vrindavan, Mathura, Uttar Pradesh, 281121, India",
+          "osm_type": "node",
+          "osm_id": 14370263801,
+          "category": "amenity",
+          "type": "cafe",
+          "query": "govinda",
+          "score": 6,
+          "confidence": "medium"
+        },
+        {
+          "latitude": 27.4686181,
+          "longitude": 77.440685,
+          "display_name": "Govinda Kunda, Jatipura, Mathura, Uttar Pradesh, India",
+          "osm_type": "way",
+          "osm_id": 335565193,
+          "category": "water",
+          "type": "lake",
+          "query": "govinda",
+          "score": 6,
+          "confidence": "medium"
+        },
+        {
+          "latitude": 27.5728703,
+          "longitude": 77.6773551,
+          "display_name": "Govinda's Restaurant, Bhaktivedanta Swami Marg, Vrindavan, Mathura, Uttar Pradesh, 281121, India",
+          "osm_type": "node",
+          "osm_id": 3413008744,
+          "category": "amenity",
+          "type": "restaurant",
+          "query": "govinda",
+          "score": 6,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "id": 183,
+      "title": "Prayāga",
+      "category": "Towns & regions",
+      "queries": [
+        "prayaga",
+        "prayaga, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 212,
+      "title": "Mathurā-devī",
+      "category": "Temples & deities",
+      "queries": [
+        "mathura devi",
+        "mathura devi, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": [
+        {
+          "latitude": 27.2867437,
+          "longitude": 77.7181552,
+          "display_name": "DEVI MAA TEMPLE, NH44, Barari, Mathura, Uttar Pradesh, 281122, India",
+          "osm_type": "node",
+          "osm_id": 12593340166,
+          "category": "amenity",
+          "type": "place_of_worship",
+          "query": "mathura devi",
+          "score": 5,
+          "confidence": "medium"
+        },
+        {
+          "latitude": 27.4811588,
+          "longitude": 77.6559929,
+          "display_name": "Devi Temple, NH44, Dholi Pyau, Mathura, Uttar Pradesh, 281001, India",
+          "osm_type": "node",
+          "osm_id": 12592940378,
+          "category": "amenity",
+          "type": "place_of_worship",
+          "query": "mathura devi",
+          "score": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "id": 280,
+      "title": "Nima-grāma",
+      "category": "Villages",
+      "queries": [
+        "nima gram",
+        "nima gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 290,
+      "title": "Dahgaon",
+      "category": "Villages",
+      "queries": [
+        "dahgaon",
+        "dahgaon, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": [
+        {
+          "latitude": 27.8330802,
+          "longitude": 77.3743056,
+          "display_name": "Dahgaon, Chhata, Mathura, Uttar Pradesh, India",
+          "osm_type": "node",
+          "osm_id": 6301407422,
+          "category": "place",
+          "type": "village",
+          "query": "dahgaon",
+          "score": 10,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": 302,
+      "title": "Yamunā-mātā",
+      "category": "Ghāṭas",
+      "queries": [
+        "yamuna mata",
+        "yamuna mata, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": [
+        {
+          "latitude": 27.5958761,
+          "longitude": 77.7471962,
+          "display_name": "Yamuna Expressway, Mant, Mat, Mathura, Uttar Pradesh, 281202, India",
+          "osm_type": "way",
+          "osm_id": 193932149,
+          "category": "highway",
+          "type": "motorway",
+          "query": "yamuna mata",
+          "score": 3,
+          "confidence": "low"
+        },
+        {
+          "latitude": 27.6301692,
+          "longitude": 77.7378125,
+          "display_name": "Yamuna Expressway, Mant, Mat, Mathura, Uttar Pradesh, 281202, India",
+          "osm_type": "way",
+          "osm_id": 193932500,
+          "category": "highway",
+          "type": "motorway",
+          "query": "yamuna mata, Mathura, Uttar Pradesh, India",
+          "score": 2,
+          "confidence": "low"
+        }
+      ]
+    },
+    {
+      "id": 308,
+      "title": "Gopī-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "gopi ghat",
+        "gopi ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 310,
+      "title": "Dhana-grāma",
+      "category": "Villages",
+      "queries": [
+        "dhana gram",
+        "dhana gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 312,
+      "title": "Vatsa-grāma",
+      "category": "Villages",
+      "queries": [
+        "vatsa gram",
+        "vatsa gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 316,
+      "title": "Pāi-grāma",
+      "category": "Villages",
+      "queries": [
+        "pai gram",
+        "pai gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 320,
+      "title": "Hāsanapura",
+      "category": "Villages",
+      "queries": [
+        "hasanapura",
+        "hasanapura, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 321,
+      "title": "Mārava-grāma (Mārava)",
+      "category": "Villages",
+      "queries": [
+        "marava gram marava",
+        "marava gram marava, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 322,
+      "title": "Jedapura",
+      "category": "Villages",
+      "queries": [
+        "jedapura",
+        "jedapura, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 326,
+      "title": "Ṭetī-grāma",
+      "category": "Villages",
+      "queries": [
+        "teti gram",
+        "teti gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 347,
+      "title": "Annakūṭa-grāma",
+      "category": "Villages",
+      "queries": [
+        "annakuta gram",
+        "annakuta gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 348,
+      "title": "Aprakaṭa-dhāma",
+      "category": "Towns & regions",
+      "queries": [
+        "aprakata dhama",
+        "aprakata dhama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 359,
+      "title": "Ayodhyā-dhāma",
+      "category": "Towns & regions",
+      "queries": [
+        "ayodhya dhama",
+        "ayodhya dhama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 376,
+      "title": "Bhadāyara-grāma",
+      "category": "Villages",
+      "queries": [
+        "bhadayara gram",
+        "bhadayara gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 377,
+      "title": "Bhauma-Vṛndāvana",
+      "category": "Towns & regions",
+      "queries": [
+        "bhauma vrindavan",
+        "bhauma vrindavan, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 378,
+      "title": "Bhegrāma",
+      "category": "Villages",
+      "queries": [
+        "bhegrama",
+        "bhegrama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 383,
+      "title": "Bhāya-grāma",
+      "category": "Villages",
+      "queries": [
+        "bhaya gram",
+        "bhaya gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 398,
+      "title": "Cayana-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "cayana ghat",
+        "cayana ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 399,
+      "title": "Cena-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "cena ghat",
+        "cena ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 403,
+      "title": "Cintāharaṇa-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "cintaharana ghat",
+        "cintaharana ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 404,
+      "title": "Cintāmaṇi-dhāma",
+      "category": "Towns & regions",
+      "queries": [
+        "cintamani dhama",
+        "cintamani dhama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 408,
+      "title": "Dadhi-grāma",
+      "category": "Villages",
+      "queries": [
+        "dadhi gram",
+        "dadhi gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 414,
+      "title": "Daśāśvamedha-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "dashashvamedha ghat",
+        "dashashvamedha ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 416,
+      "title": "Daṇḍi-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "dandi ghat",
+        "bengali ghat"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 419,
+      "title": "Devī-dhāma",
+      "category": "Temples & deities",
+      "queries": [
+        "devi dhama",
+        "devi dhama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 423,
+      "title": "Dhruva-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "dhruva ghat",
+        "dhruva ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 428,
+      "title": "Dhūlāuda-grāma",
+      "category": "Villages",
+      "queries": [
+        "dhulauda gram",
+        "dhulauda gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 445,
+      "title": "Dṛśyamāna-dhāma",
+      "category": "Towns & regions",
+      "queries": [
+        "drishyamana dhama",
+        "drishyamana dhama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 461,
+      "title": "Ghaṇṭābharaṇa-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "ghantabharana ghat",
+        "ghantabharana ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 463,
+      "title": "Go-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "go ghat",
+        "go ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 466,
+      "title": "Gokarṇa-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "gokarna ghat",
+        "gokarna ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 470,
+      "title": "Gomatī-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "gomati ghat",
+        "gomati ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 473,
+      "title": "Gopāla-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "gopala ghat",
+        "gopala ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 476,
+      "title": "Gosvāmī-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "gosvami ghat",
+        "gosvami ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 477,
+      "title": "Govinda-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "govinda ghat",
+        "govinda sthali"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 488,
+      "title": "Gāṅṭhuli-grāma",
+      "category": "Villages",
+      "queries": [
+        "ganthuli gram",
+        "ganthuli gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 490,
+      "title": "Hari-dhāma",
+      "category": "Towns & regions",
+      "queries": [
+        "hari dhama",
+        "hari dhama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 501,
+      "title": "Jajigrāma",
+      "category": "Villages",
+      "queries": [
+        "jajigrama",
+        "jajigrama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 505,
+      "title": "Jhūlana-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "jhulana ghat",
+        "jhulana ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 508,
+      "title": "Jāhnavā-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "jahnava ghat",
+        "jahnava ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 511,
+      "title": "Kalpagrāma",
+      "category": "Villages",
+      "queries": [
+        "kalpagrama",
+        "kalpagrama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 517,
+      "title": "Kaṅkhala-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "kankhala ghat",
+        "kankhala ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 532,
+      "title": "Koṭi-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "koti ghat",
+        "ganesha ghat"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 535,
+      "title": "Kulīna-grāma",
+      "category": "Villages",
+      "queries": [
+        "kulina gram",
+        "kulina gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 579,
+      "title": "Maheśa-dhāma",
+      "category": "Towns & regions",
+      "queries": [
+        "mahesha dhama",
+        "mahesha dhama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 581,
+      "title": "Mahā-Vṛndāvana",
+      "category": "Towns & regions",
+      "queries": [
+        "maha vrindavan",
+        "maha vrindavan, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 588,
+      "title": "Maṇi-karṇika-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "mani karnika ghat",
+        "mani karnika ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 601,
+      "title": "Mādhurya-dhāma",
+      "category": "Towns & regions",
+      "queries": [
+        "madhurya dhama",
+        "madhurya dhama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 606,
+      "title": "Mānasa-pāvana-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "manasa pavana ghat",
+        "manasa pavana ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 608,
+      "title": "Mārava-grāma",
+      "category": "Villages",
+      "queries": [
+        "marava gram",
+        "marava gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 609,
+      "title": "Māyāpur-Vṛndāvana",
+      "category": "Towns & regions",
+      "queries": [
+        "mayapur vrindavan",
+        "mayapur vrindavan, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 611,
+      "title": "Na-grāma",
+      "category": "Villages",
+      "queries": [
+        "na gram",
+        "na gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 612,
+      "title": "Nanda-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "nanda ghat",
+        "nanda ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 614,
+      "title": "Nava-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "nava ghat",
+        "asi kund"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 615,
+      "title": "Nava-Vṛndāvana",
+      "category": "Towns & regions",
+      "queries": [
+        "nava vrindavan",
+        "nava vrindavan, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 616,
+      "title": "Navadvīpa-dhāma",
+      "category": "Towns & regions",
+      "queries": [
+        "navadvipa dhama",
+        "navadvipa dhama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 617,
+      "title": "Navagrāma",
+      "category": "Villages",
+      "queries": [
+        "navagrama",
+        "navagrama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 619,
+      "title": "New-Vraja-dhāma",
+      "category": "Towns & regions",
+      "queries": [
+        "new vraja dhama",
+        "new vraja dhama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 624,
+      "title": "Nirmañcana-grāma",
+      "category": "Villages",
+      "queries": [
+        "nirmancana gram",
+        "nirmancana gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 626,
+      "title": "Nivāraṇa-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "nivarana ghat",
+        "nivarana ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 631,
+      "title": "Nīlācala-dhāma",
+      "category": "Towns & regions",
+      "queries": [
+        "nilacala dhama",
+        "nilacala dhama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 640,
+      "title": "Paya-grāma",
+      "category": "Villages",
+      "queries": [
+        "paya gram",
+        "paya gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 641,
+      "title": "Pañca-pāṇḍava-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "panca pandava ghat",
+        "panca pandava ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 654,
+      "title": "Prakaṭa-dhāma",
+      "category": "Towns & regions",
+      "queries": [
+        "prakata dhama",
+        "prakata dhama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 659,
+      "title": "Prayāga-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "prayaga ghat",
+        "prayaga ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 664,
+      "title": "Pāni-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "pani ghat",
+        "pani ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": [
+        {
+          "latitude": 27.5779027,
+          "longitude": 77.7077571,
+          "display_name": "Pani-ghat, Parikram Marg, Vrindavan, Mathura, Uttar Pradesh, 281121, India",
+          "osm_type": "node",
+          "osm_id": 7287711828,
+          "category": "amenity",
+          "type": "place_of_worship",
+          "query": "pani ghat",
+          "score": 9,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": 670,
+      "title": "Pāśa-khela-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "pasha khela ghat",
+        "pasha khela ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 692,
+      "title": "Rādhā-saubhāgya-mandira",
+      "category": "Temples & deities",
+      "queries": [
+        "radha saubhagya mandir",
+        "radha saubhagya mandir, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 694,
+      "title": "Rāja-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "raja ghat",
+        "raja ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 697,
+      "title": "Rāsavedī-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "rasavedi ghat",
+        "rasavedi ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 706,
+      "title": "Saptarṣi-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "saptarshi ghat",
+        "saptarshi ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 709,
+      "title": "Sarvabhāvana",
+      "category": "Temples & deities",
+      "queries": [
+        "sarvabhavana",
+        "sarvabhavana, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 710,
+      "title": "Satohā-grāma",
+      "category": "Villages",
+      "queries": [
+        "satoha gram",
+        "satoha gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 731,
+      "title": "Svāmī-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "svami ghat",
+        "svami ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 733,
+      "title": "Sābalā-grāma",
+      "category": "Villages",
+      "queries": [
+        "sabala gram",
+        "sabala gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 736,
+      "title": "Sūrya-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "surya ghat",
+        "surya ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 747,
+      "title": "Udhā-grāma",
+      "category": "Villages",
+      "queries": [
+        "udha gram",
+        "udha gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 749,
+      "title": "Vallabha-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "vallabha ghat",
+        "pasha khela ghat"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 750,
+      "title": "Varāha-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "varaha ghat",
+        "varaha ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": [
+        {
+          "latitude": 27.5761598,
+          "longitude": 77.6752188,
+          "display_name": "Вараха-гхат, Parikram Marg, Vrindavan, Mathura, Uttar Pradesh, 281121, India",
+          "osm_type": "node",
+          "osm_id": 7287742611,
+          "category": "amenity",
+          "type": "place_of_worship",
+          "query": "varaha ghat",
+          "score": 6,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "id": 755,
+      "title": "Veṇī-mādhava-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "veni madhava ghat",
+        "veni madhava ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 759,
+      "title": "Vighnarāja-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "vighnaraja ghat",
+        "vighnaraja ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 762,
+      "title": "Vihāra-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "vihara ghat",
+        "vihara ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 774,
+      "title": "Vraja-dhāma",
+      "category": "Towns & regions",
+      "queries": [
+        "vraja dhama",
+        "vraja dhama, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 775,
+      "title": "Vraja-grāma",
+      "category": "Towns & regions",
+      "queries": [
+        "vraja gram",
+        "vraja gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 785,
+      "title": "Yoga-ghāṭa",
+      "category": "Ghāṭas",
+      "queries": [
+        "yoga ghat",
+        "yoga ghat, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    },
+    {
+      "id": 790,
+      "title": "Yāvaṭā-grāma",
+      "category": "Villages",
+      "queries": [
+        "yavata gram",
+        "yavata gram, Mathura, Uttar Pradesh, India"
+      ],
+      "candidates": []
+    }
+  ]
+}

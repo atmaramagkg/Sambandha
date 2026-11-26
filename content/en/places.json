@@ -7,7 +7,11 @@
     "summary": "The holy city where Lord Kṛṣṇa appeared in the prison of Kaṁsa.",
     "body": "Mathurā is one of the oldest holy cities of India, on the bank of the Yamunā. In the Bhāgavatam it is the capital of the Yadu dynasty, ruled in that period by the tyrant Kaṁsa.\n\nIt was in Kaṁsa's prison here that Kṛṣṇa appeared to Devakī and Vasudeva. Years later Kṛṣṇa returned from Vraja to Mathurā and ended Kaṁsa's rule.\n\nListed in a Vraja pastime-places catalogue as: Great Forests (Adhivanas). Source: https://vanachari.blogspot.com/2023/12/pastime-places.html",
     "source_ref": "Śrīmad-Bhāgavatam 10.3; 10.43–10.44; https://vanachari.blogspot.com/2023/12/pastime-places.html",
-    "status": "draft"
+    "status": "draft",
+    "latitude": 27.4955539,
+    "longitude": 77.6855554,
+    "coordinate_confidence": "approximate",
+    "coordinate_source": "OpenStreetMap Nominatim (Mathura city centre)"
   },
   {
     "id": 2,
@@ -7115,7 +7119,11 @@
     "summary": "Pāni-ghāṭa is the Yamunā landing where Rādhā led the gopīs, on Kṛṣṇa's advice, to ask the river to part on the strength of His brahmacarya vow.",
     "body": "Pāni-ghāṭa is the Yamunā landing where Rādhā led the gopīs, on Kṛṣṇa's advice, to ask the river to part on the strength of His brahmacarya vow. The waters parted into two walls, the gopīs held hands and crossed, and the place is named for the parting of the waters (pāni). Tradition links it to the Gopāla-tāpanī Upaniṣad pastime and notes that Ādibadrī-ghāṭa, where Kṛṣṇa revealed Himself as Badarī-nārāyaṇa, comes next.",
     "source_ref": "User-provided notes on Vraja holy places",
-    "status": "draft"
+    "status": "draft",
+    "latitude": 27.5779027,
+    "longitude": 77.7077571,
+    "coordinate_confidence": "high",
+    "coordinate_source": "OpenStreetMap Nominatim (exact Pani-ghat match)"
   },
   {
     "id": 665,
@@ -8019,7 +8027,11 @@
     "summary": "A landing on the Yamunā where Kṛṣṇa revealed His boar incarnation to the curious cowherd girls, and where Gautama Muni had his āśrama.",
     "body": "A landing on the Yamunā where Kṛṣṇa revealed His boar incarnation to the curious cowherd girls, and where Gautama Muni had his āśrama. From that time on, the landing has been known as Varāha-ghāṭa. It lies on the parikrama path where it turns onto the cowherd-boy trail, a short walk from ISKCON’s Kṛṣṇa-Balarāma temple, and its Varāha Deity was later stolen.",
     "source_ref": "User-provided notes on Vraja holy places",
-    "status": "draft"
+    "status": "draft",
+    "latitude": 27.5761598,
+    "longitude": 77.6752188,
+    "coordinate_confidence": "approximate",
+    "coordinate_source": "OpenStreetMap Nominatim (Varaha-ghat match, Cyrillic OSM name)"
   },
   {
     "id": 751,

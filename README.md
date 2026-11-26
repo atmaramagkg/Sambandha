@@ -47,6 +47,22 @@ Content lives in `content/en/` as three JSON files: `people.json`,
   `assets/db/version.txt`; the app picks up the new database automatically on
   next launch.
 
+### Finding missing coordinates
+
+For places that still lack pins, `tools/geo_candidates.py` can generate a
+review-only report from OpenStreetMap:
+
+```
+python tools/geo_candidates.py
+```
+
+It writes `tools/geo_candidates.json`. The search is rate-limited and bounded
+to the Vraja region, and it needs an internet connection. **Do not apply
+candidates automatically**: compare the candidate name, place type, address and
+the content description first. Clear matches can then be copied into
+`content/en/places.json` with `latitude`, `longitude`,
+`coordinate_confidence` and `coordinate_source`.
+
 ## Map
 
 The **Map of holy places** screen starts at central Vṛndāvana. Tap the map to
