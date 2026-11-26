@@ -13,11 +13,13 @@ Content rules enforced here (the build fails if one is broken):
   * every record has a unique integer id, a unique slug and a unique title
   * every record has a non-empty body and a source_ref
   * status is "draft" or "reviewed"
+  * user-facing text contains no attribution to the source book used for notes
   * every slug used in a link, relation or route stop exists
 """
 
 import hashlib
 import json
+import re
 import sqlite3
 import sys
 from pathlib import Path
@@ -27,6 +29,14 @@ CONTENT = ROOT / "content"
 OUT_DIR = ROOT / "assets" / "db"
 BASE_LANG = "en"
 STATUSES = {"draft", "reviewed"}
+
+# User-facing text must never name or point back to the source book used to
+# prepare the notes. Keep descriptions in the app's own words instead.
+FORBIDDEN_SOURCE = re.compile(
+    r"(?i)\b(?:śivarāma|sivarama|nava[- ]vraja[- ]mahimā|nvm)\b"
+    r"|\b(?:book|excerpts?|chapter|author)\b"
+    r"|\bthe text\b"
+)
 
 SCHEMA = """
 CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
@@ -118,6 +128,9 @@ def check_record(lang, kind, rec):
         fail(f"{where}: id must be an integer")
     if rec["status"] not in STATUSES:
         fail(f"{where}: status must be one of {sorted(STATUSES)}")
+    for field in ("summary", "body", "source_ref"):
+        if FORBIDDEN_SOURCE.search(str(rec[field])):
+            fail(f"{where}: contains a source-attribution phrase in '{field}'")
 
 
 def main():
@@ -226,6 +239,8 @@ def main():
                 fail(f"route '{route['slug']}': stop {position} needs a place slug")
             if note is not None and not isinstance(note, str):
                 fail(f"route '{route['slug']}': stop {position} note must be text")
+            if note and FORBIDDEN_SOURCE.search(note):
+                fail(f"route '{route['slug']}': stop {position} note contains a source-attribution phrase")
             if place_slug not in ids["place"]:
                 fail(f"route '{route['slug']}': unknown place '{place_slug}'")
             if place_slug in seen_places:
