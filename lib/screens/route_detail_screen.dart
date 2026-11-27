@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:latlong2/latlong.dart';
 
 import '../data/models.dart';
+import '../maps/basemap_layer.dart';
 import '../providers.dart';
 import '../utils/geo.dart';
 import '../widgets/common.dart';
@@ -369,11 +370,7 @@ class _RouteMap extends StatelessWidget {
             maxZoom: 18,
           ),
           children: [
-            TileLayer(
-              urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-              userAgentPackageName: 'vraja_mandala',
-              maxNativeZoom: 19,
-            ),
+            const BasemapLayer(),
             if (currentPoint != null)
               CircleLayer(
                 circles: [
@@ -422,9 +419,7 @@ class _RouteMap extends StatelessWidget {
                   ),
               ],
             ),
-            const SimpleAttributionWidget(
-              source: Text('© OpenStreetMap contributors'),
-            ),
+            const BasemapAttribution(),
           ],
         ),
       ),

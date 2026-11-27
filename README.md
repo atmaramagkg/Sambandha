@@ -81,9 +81,31 @@ move the centre, then choose a 1, 3, 5, 10 or 20 km radius. Markers and the
 nearby list include only places with coordinates; the list is sorted by
 distance.
 
-Place data and the radius calculation are local and work offline. The map
-basemap uses OpenStreetMap tiles, so drawing the streets and labels needs an
-internet connection.
+Place data and the radius calculation are local and work offline. Both map
+screens share `lib/maps/basemap_layer.dart`: it uses a bundled BBBike raster
+MBTiles extract when one is available, and otherwise falls back to online
+OpenStreetMap tiles. Android release builds include the `INTERNET` permission
+for that fallback.
+
+### Offline Vraja basemap (BBBike extract)
+
+The free BBBike extract service has no API, so the extract must be requested
+interactively in a browser (do not automate or scrape it):
+
+1. Open https://extract.bbbike.org/ and draw or enter a bounding box covering
+   Vraja Mandala. A suitable box is west `77.1`, south `27.2`, east `78.1`,
+   north `28.0`.
+2. Choose the raster **MBTiles** output format (PNG/JPEG/WebP tiles, not the
+   vector Shortbread format), enter your email and submit the request.
+3. When the download link arrives, save the extract as
+   `assets/maps/vraja-mandala.mbtiles`.
+4. Rebuild the app. On first launch the app copies the extract into its support
+   folder and uses it for both screens, with no network connection needed.
+
+Keep the extract's zoom range modest so the app package stays small. BBBike
+extracts are generated from OpenStreetMap data (© OpenStreetMap contributors,
+ODbL 1.0) and may expire; request a fresh extract when needed. Attribution is
+shown on both maps.
 
 ## Guided parikrama routes
 
@@ -123,9 +145,11 @@ tools/build_db.py         validates content, builds the SQLite database
 assets/db/                generated database (committed so the app can run)
 assets/icon/              launcher icon source
 lib/data/                 models, database opening, queries
+lib/maps/                 shared basemap layer and configuration
 lib/providers.dart        Riverpod providers (content, routes, search, saved)
 lib/screens/              home, lists, entry, map, routes, search, saved, about
 lib/utils/geo.dart        haversine distance for radius and route legs
+assets/maps/              optional BBBike raster MBTiles extract
 lib/widgets/common.dart   shared tiles and related-links section
 ```
 

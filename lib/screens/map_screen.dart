@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:latlong2/latlong.dart';
 
 import '../data/models.dart';
+import '../maps/basemap_layer.dart';
 import '../providers.dart';
 import '../utils/geo.dart';
 
@@ -127,12 +128,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                         },
                       ),
                       children: [
-                        TileLayer(
-                          urlTemplate:
-                              'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                          userAgentPackageName: 'vraja_mandala',
-                          maxNativeZoom: 19,
-                        ),
+                        const BasemapLayer(),
                         CircleLayer(
                           circles: [
                             CircleMarker(
@@ -169,9 +165,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                               ),
                           ],
                         ),
-                        const SimpleAttributionWidget(
-                          source: Text('© OpenStreetMap contributors'),
-                        ),
+                        const BasemapAttribution(),
                       ],
                     ),
                     Positioned(
