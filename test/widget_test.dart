@@ -34,7 +34,7 @@ void main() {
       'title': 'Rādhā-kuṇḍa',
       'summary': 'A sacred lake.',
       'body': 'Paragraph.',
-      'source_ref': 'Google Maps saved places export',
+      'source_ref': '',
       'status': 'draft',
       'latitude': 27.509,
       'longitude': 77.479,
@@ -42,6 +42,21 @@ void main() {
     expect(entry.latitude, 27.509);
     expect(entry.longitude, 77.479);
     expect(entry.hasCoordinates, isTrue);
+    expect(
+      entry.googleMapsUrl,
+      'https://www.google.com/maps/search/?api=1&query=27.509,77.479',
+    );
+    expect(entry.shastraReference, isNull);
+  });
+
+  test('only precise shastra references are shown', () {
+    expect(
+      preciseShastraReference('Śrīmad-Bhāgavatam 4.8–4.12'),
+      'Śrīmad-Bhāgavatam 4.8–4.12',
+    );
+    expect(preciseShastraReference('Bhagavad-gītā 1–2'), 'Bhagavad-gītā 1–2');
+    expect(preciseShastraReference('User-provided notes'), isNull);
+    expect(preciseShastraReference(''), isNull);
   });
 
   testWidgets('BottomSafeArea reserves only the bottom system inset',

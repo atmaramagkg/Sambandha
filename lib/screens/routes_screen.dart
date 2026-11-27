@@ -30,7 +30,7 @@ class RoutesScreen extends ConsumerWidget {
               '${route.stops.length} stops',
               formatDistance(route.totalMeters),
               if (route.unmappedStops > 0)
-                '${route.unmappedStops} need coordinates',
+                '${route.unmappedStops} not on map',
             ];
             return Card(
               child: ListTile(

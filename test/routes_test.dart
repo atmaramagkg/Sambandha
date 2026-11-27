@@ -30,7 +30,7 @@ void main() {
       titleDeva: null,
       summary: 'Summary',
       body: 'Paragraph one.\n\nParagraph two.',
-      sourceRef: 'Test',
+      sourceRef: '',
       status: 'draft',
       stories: const [],
       stops: [

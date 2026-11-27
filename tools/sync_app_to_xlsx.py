@@ -2,9 +2,10 @@
 """Sync app place data into the Excel workbook.
 
 The app is the source of truth. This tool updates title, coordinates,
-coordinate confidence, coordinate provenance, description and app ID for every
-matching place row. Existing spreadsheet-only columns (mentions, pastime flag,
-Google match and Google address) are preserved.
+coordinate confidence, description and app ID for every matching place row.
+The old Google match/address and coordinate-source columns are replaced by a
+single Google Maps link column: a link is written only when a place has both
+coordinates.
 
 Six spreadsheet spellings are kept as variant rows rather than separate app
 places. They are linked to their app ID and receive the same reviewed wording,
@@ -32,6 +33,7 @@ XLSX = Path(r"C:\Users\austr\OneDrive\Documents\holy_places.xlsx")
 BACKUP = Path(r"C:\Users\austr\AppData\Local\Temp\opencode\holy_places-before-app-sync.xlsx")
 SHEET = "xl/worksheets/sheet1.xml"
 TABLE = "xl/tables/table1.xml"
+SHARED = "xl/sharedStrings.xml"
 NS = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
 
 # Spreadsheet spelling variant -> app place ID. Coordinates are not replaced
@@ -79,10 +81,23 @@ def number(ref, value, style=None):
     return f'<c r="{ref}"{attrs} t="n"><v>{format(float(value), ".10g")}</v></c>'
 
 
+def coordinate_text(value):
+    return format(float(value), ".10g")
+
+
+def maps_link(latitude, longitude):
+    if latitude is None or longitude is None or str(latitude).strip() == "" or str(longitude).strip() == "":
+        return ""
+    return (
+        "https://www.google.com/maps/search/?api=1&query="
+        f"{coordinate_text(latitude)},{coordinate_text(longitude)}"
+    )
+
+
 def shared_strings(archive):
-    if "xl/sharedStrings.xml" not in archive.namelist():
+    if SHARED not in archive.namelist():
         return []
-    root = ET.fromstring(archive.read("xl/sharedStrings.xml"))
+    root = ET.fromstring(archive.read(SHARED))
     return [
         "".join(t.text or "" for t in item.iterfind(".//m:t", NS))
         for item in root.findall("m:si", NS)
@@ -124,6 +139,39 @@ def clean_description(body):
     return body.replace("\r\n", "\n").replace("\n\n", "\n")
 
 
+def compact_shared_strings(shared_xml, sheet_xml):
+    """Remove unused strings so no legacy addresses survive inside the workbook."""
+    used = sorted(
+        {int(index) for index in re.findall(r'<c\b[^>]*\bt="s"[^>]*><v>(\d+)</v></c>', sheet_xml)}
+    )
+    remap = {old: new for new, old in enumerate(used)}
+
+    def rewrite_cell(match):
+        return (
+            f"{match.group(1)}<v>{remap[int(match.group(2))]}</v>{match.group(3)}"
+        )
+
+    new_sheet = re.sub(
+        r'(<c\b[^>]*\bt="s"[^>]*>)<v>(\d+)</v>(</c>)',
+        rewrite_cell,
+        sheet_xml,
+    )
+    items = re.findall(r"<si>.*?</si>", shared_xml, flags=re.S)
+    new_shared = re.sub(
+        r"<sst\b([^>]*)>",
+        lambda match: "<sst"
+        + re.sub(r'\s+(?:count|uniqueCount)="\d+"', "", match.group(1))
+        + f' count="{len(used)}" uniqueCount="{len(used)}">',
+        shared_xml,
+        count=1,
+    )
+    new_shared = re.sub(r"<si>.*?</si>", "", new_shared, flags=re.S)
+    new_shared = new_shared.replace(
+        "</sst>", "".join(items[index] for index in used) + "</sst>", 1
+    )
+    return new_sheet, new_shared
+
+
 def main():
     apply = "--apply" in sys.argv
     places = json.loads(PLACES.read_text(encoding="utf-8"))
@@ -136,12 +184,13 @@ def main():
         entries = [(info, archive.read(info.filename)) for info in archive.infolist()]
         sheet = archive.read(SHEET).decode("utf-8")
         table = archive.read(TABLE).decode("utf-8")
+        shared_xml = archive.read(SHARED).decode("utf-8")
         strings = shared_strings(archive)
 
     root = ET.fromstring(sheet)
     rows = root.findall("m:sheetData/m:row", NS)
     last_row = int(rows[-1].attrib["r"])
-    stats = {"matched": 0, "variants": 0, "coords": 0, "descriptions": 0}
+    stats = {"matched": 0, "variants": 0, "coords": 0, "links": 0, "descriptions": 0}
 
     def replace_row(match):
         row_xml = match.group(0)
@@ -149,9 +198,15 @@ def main():
         raw, cells = row_cells(row_xml)
 
         if row_num == 1:
-            for column, label in (("K", "Coordinate source"), ("L", "App ID")):
-                if column not in raw:
-                    raw[column] = inline(f"{column}1", label, style_of(raw.get("J", "")))
+            headings = {
+                "H": ("Google Maps link", raw.get("H", "")),
+                "I": ("Description", raw.get("J", "")),
+                "J": ("Notes", raw.get("K", "")),
+                "K": ("App ID", raw.get("L", "")),
+            }
+            for column, (label, old_cell) in headings.items():
+                raw[column] = inline(f"{column}1", label, style_of(old_cell))
+            raw.pop("L", None)
             ordered = sorted(raw.items(), key=lambda item: col_num(item[0]))
             return '<row r="1">' + "".join(xml for _, xml in ordered) + "</row>"
 
@@ -171,55 +226,74 @@ def main():
                 confidence = place.get("coordinate_confidence") or "from app"
                 raw["G"] = inline(f"G{row_num}", confidence, style_of(raw.get("G", "")))
                 stats["coords"] += 1
-                source = place.get("coordinate_source", "")
-                if source:
-                    raw["K"] = inline(f"K{row_num}", source)
-                else:
-                    raw.pop("K", None)
             else:
                 raw.pop("E", None)
                 raw.pop("F", None)
                 raw["G"] = inline(f"G{row_num}", "none", style_of(raw.get("G", "")))
-                raw.pop("K", None)
         else:
             stats["variants"] += 1
-            raw["K"] = inline(f"K{row_num}", "Spreadsheet spelling variant mapped to app place")
+            latitude = cell_text(cells.get("E"), strings) if "E" in cells else ""
+            longitude = cell_text(cells.get("F"), strings) if "F" in cells else ""
 
-        old_description = cell_text(cells.get("J"), strings) if "J" in cells else ""
+        link = maps_link(latitude, longitude)
+        if link:
+            stats["links"] += 1
+        raw["H"] = inline(f"H{row_num}", link, style_of(raw.get("H", "")))
+
         description = clean_description(place["body"])
+        old_description = cell_text(cells.get("I"), strings) if "I" in cells else ""
+        if old_description != description:
+            old_description = cell_text(cells.get("J"), strings) if "J" in cells else ""
         if old_description != description:
             stats["descriptions"] += 1
-        raw["J"] = inline(f"J{row_num}", description, style_of(raw.get("J", "")) or "2")
-        raw["L"] = inline(f"L{row_num}", place["id"])
+        raw["I"] = inline(f"I{row_num}", description, style_of(raw.get("J", "")) or "2")
+        raw["J"] = inline(f"J{row_num}", "", style_of(raw.get("K", "")))
+        raw["K"] = inline(f"K{row_num}", place["id"], style_of(raw.get("L", "")))
+        raw.pop("L", None)
 
         ordered = sorted(raw.items(), key=lambda item: col_num(item[0]))
         return f'<row r="{row_num}">' + "".join(xml for _, xml in ordered) + "</row>"
 
     new_sheet = re.sub(r'<row r="\d+"[^>]*>.*?</row>', replace_row, sheet, flags=re.S)
-    new_sheet = new_sheet.replace(
-        f'<dimension ref="A1:J{last_row}"/>',
-        f'<dimension ref="A1:L{last_row}"/>',
-        1,
+    new_sheet = re.sub(
+        r'<dimension ref="A1:[A-Z]+\d+"/>',
+        f'<dimension ref="A1:K{last_row}"/>',
+        new_sheet,
+        count=1,
     )
+    new_sheet, new_shared = compact_shared_strings(shared_xml, new_sheet)
 
     new_table = table
-    new_table = new_table.replace(f'ref="A1:J{last_row}"', f'ref="A1:L{last_row}"')
-    new_table = new_table.replace(
-        f'<autoFilter ref="A1:J{last_row}"/>',
-        f'<autoFilter ref="A1:L{last_row}"/>',
+    new_table = re.sub(r'ref="A1:[A-Z]+\d+"', f'ref="A1:K{last_row}"', new_table)
+    names = [
+        "#",
+        "Place",
+        "Mentions",
+        "Pastime/description",
+        "Latitude",
+        "Longitude",
+        "Coordinate confidence",
+        "Google Maps link",
+        "Description",
+        "Notes",
+        "App ID",
+    ]
+    columns = "".join(
+        f'<tableColumn id="{index}" name="{escape(name)}"/>'
+        for index, name in enumerate(names, start=1)
     )
-    if '<tableColumns count="10">' in new_table:
-        new_table = new_table.replace('<tableColumns count="10">', '<tableColumns count="12">')
-        new_table = new_table.replace(
-            "</tableColumns>",
-            '<tableColumn id="11" name="Coordinate source"/>'
-            '<tableColumn id="12" name="App ID"/></tableColumns>',
-            1,
-        )
+    new_table = re.sub(
+        r"<tableColumns\b[^>]*>.*?</tableColumns>",
+        f'<tableColumns count="{len(names)}">{columns}</tableColumns>',
+        new_table,
+        count=1,
+        flags=re.S,
+    )
 
     print("exact app rows:", stats["matched"])
     print("spelling variants linked:", stats["variants"])
     print("rows with app coordinates:", stats["coords"])
+    print("rows with Google Maps links:", stats["links"])
     print("descriptions changed:", stats["descriptions"])
     if not apply:
         print("dry run; pass --apply to write")
@@ -229,7 +303,11 @@ def main():
         shutil.copy2(XLSX, BACKUP)
         print("backup:", BACKUP)
 
-    updates = {SHEET: new_sheet.encode("utf-8"), TABLE: new_table.encode("utf-8")}
+    updates = {
+        SHEET: new_sheet.encode("utf-8"),
+        TABLE: new_table.encode("utf-8"),
+        SHARED: new_shared.encode("utf-8"),
+    }
     temporary = XLSX.with_suffix(".tmp.xlsx")
     with zipfile.ZipFile(temporary, "w") as output:
         for info, data in entries:

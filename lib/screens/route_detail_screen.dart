@@ -118,8 +118,9 @@ class _RouteDetailScreenState extends ConsumerState<RouteDetailScreen> {
                                   Text(paragraph),
                                   const SizedBox(height: 8),
                                 ],
-                                Text(route.sourceRef,
-                                    style: theme.textTheme.bodySmall),
+                                if (route.shastraReference != null)
+                                  Text(route.shastraReference!,
+                                      style: theme.textTheme.bodySmall),
                                 if (!route.isReviewed) ...[
                                   const SizedBox(height: 8),
                                   Text('Draft · not yet reviewed',
@@ -178,7 +179,7 @@ class _RouteStats extends StatelessWidget {
       (Icons.straighten, formatDistance(route.totalMeters)),
       (Icons.place_outlined, '${route.stops.length} stops'),
       if (route.unmappedStops > 0)
-        (Icons.info_outline, '${route.unmappedStops} need pins'),
+        (Icons.info_outline, '${route.unmappedStops} not on map'),
     ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -226,7 +227,7 @@ class _CurrentStopBanner extends StatelessWidget {
       'Stop ${stop.position} of $total',
       if (stop.hasLegDistance)
         '${formatDistance(stop.distanceFromPreviousMeters!)} from previous',
-      if (!stop.place.hasCoordinates) 'Coordinates not added yet',
+      if (!stop.place.hasCoordinates) 'Not on the map',
     ];
     return Container(
       width: double.infinity,
@@ -324,7 +325,7 @@ class _RouteMap extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Text(
-            'No stops on this route have coordinates yet.',
+            'No stops on this route are on the map yet.',
             style: theme.textTheme.bodySmall,
             textAlign: TextAlign.center,
           ),

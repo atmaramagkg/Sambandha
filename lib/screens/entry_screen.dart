@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../data/models.dart';
 import '../providers.dart';
@@ -57,9 +58,32 @@ class _EntryBody extends StatelessWidget {
         EntityKind.story => [EntityKind.person, EntityKind.place],
       };
 
+  Future<void> _openInGoogleMaps(BuildContext context) async {
+    final url = entry.googleMapsUrl;
+    if (url == null) return;
+    try {
+      final opened = await launchUrl(
+        Uri.parse(url),
+        mode: LaunchMode.externalApplication,
+      );
+      if (!opened && context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Could not open Google Maps.')),
+        );
+      }
+    } catch (_) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Could not open Google Maps.')),
+        );
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final shastraReference = entry.shastraReference;
     return SingleChildScrollView(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
       child: Column(
@@ -84,19 +108,29 @@ class _EntryBody extends StatelessWidget {
                   style: theme.textTheme.bodyLarge?.copyWith(height: 1.55)),
             ),
           const SizedBox(height: 4),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Icon(Icons.menu_book_outlined, size: 18),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Text('Source: ${entry.sourceRef}',
-                    style: theme.textTheme.bodyMedium),
-              ),
-            ],
-          ),
+          if (entry.kind == EntityKind.place && entry.googleMapsUrl != null) ...[
+            FilledButton.tonalIcon(
+              onPressed: () => _openInGoogleMaps(context),
+              icon: const Icon(Icons.map_outlined),
+              label: const Text('Open in Google Maps'),
+            ),
+            const SizedBox(height: 8),
+          ],
+          if (shastraReference != null) ...[
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Icon(Icons.menu_book_outlined, size: 18),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text('Śāstra reference: $shastraReference',
+                      style: theme.textTheme.bodyMedium),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+          ],
           if (!entry.isReviewed) ...[
-            const SizedBox(height: 12),
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
@@ -104,8 +138,7 @@ class _EntryBody extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Text(
-                'Draft retelling, not yet reviewed. Please check it against '
-                'the source cited above.',
+                'Draft retelling, not yet reviewed.',
                 style: theme.textTheme.bodySmall,
               ),
             ),

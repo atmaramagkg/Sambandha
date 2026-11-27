@@ -24,8 +24,8 @@ extension _PlaceGroupX on _PlaceGroup {
 
   String get emptyMessage => switch (this) {
         _PlaceGroup.all => 'No places available yet.',
-        _PlaceGroup.mapped => 'No places have map pins yet.',
-        _PlaceGroup.unmapped => 'Every place has a map pin.',
+        _PlaceGroup.mapped => 'No places are on the map yet.',
+        _PlaceGroup.unmapped => 'Every place is on the map.',
       };
 }
 

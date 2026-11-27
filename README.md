@@ -23,7 +23,10 @@ Content lives in `content/en/` as three JSON files: `people.json`,
 `places.json`, `stories.json`.
 
 - Each record needs a unique integer `id`, a unique `slug`, `title`, `summary`,
-  `body` (paragraphs separated by a blank line), `source_ref` and `status`.
+  `body` (paragraphs separated by a blank line) and `status`. `source_ref` is
+  optional and may contain only a precise shastra citation such as
+  `Śrīmad-Bhāgavatam 4.8–4.12`; references to user notes, books, itineraries or
+  websites are not shown in the app.
 - Never reuse or renumber an `id`: saved items on users' phones refer to it.
 - `status` is `draft` until a knowledgeable reader has checked the entry; then
   change it to `reviewed` and the draft notice disappears from that page.
@@ -32,10 +35,11 @@ Content lives in `content/en/` as three JSON files: `people.json`,
 - A route in `routes.json` lists `stops` by place slug in walking order, with an
   optional note on each stop. It may also list related `stories` by slug.
 - A place may include optional `latitude` and `longitude` numbers. Set both
-  together; they are stored in the database and are used by the map's
-  1/3/5/10/20 km radius filter and by guided-route distances. A place can also
-  carry `coordinate_confidence` (`high` or `approximate`) and
-  `coordinate_source` so later reviews know where a pin came from.
+  together; they are used by the map's 1/3/5/10/20 km radius filter, by
+  guided-route distances and by the **Open in Google Maps** button on the place
+  page. A place can also carry `coordinate_confidence` (`high` or
+  `approximate`). Addresses, coordinate sources and raw coordinate text are not
+  shown in the app.
 - Rebuild the database after any change:
 
   ```
@@ -58,10 +62,10 @@ python tools/geo_candidates.py
 
 It writes `tools/geo_candidates.json`. The search is rate-limited and bounded
 to the Vraja region, and it needs an internet connection. **Do not apply
-candidates automatically**: compare the candidate name, place type, address and
-the content description first. Clear matches can then be copied into
-`content/en/places.json` with `latitude`, `longitude`,
-`coordinate_confidence` and `coordinate_source`.
+candidates automatically**: compare the candidate name, place type and content
+description first. Clear matches can then be copied into
+`content/en/places.json` with `latitude`, `longitude` and
+`coordinate_confidence`.
 
 The Excel workbook is a downstream copy of the app data. After content or
 coordinate changes, sync it with:
@@ -71,8 +75,9 @@ python tools/sync_app_to_xlsx.py --apply
 ```
 
 This overwrites `C:\Users\austr\OneDrive\Documents\holy_places.xlsx`, updates
-coordinates, confidence, provenance, descriptions and app IDs, and keeps a
-backup in the temporary folder. Run without `--apply` for a dry run.
+coordinates, confidence, descriptions, map links and app IDs, removes the old
+Google match/address and coordinate-source columns, and keeps a backup in the
+temporary folder. Run without `--apply` for a dry run.
 
 ## Map
 

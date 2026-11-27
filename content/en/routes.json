@@ -5,10 +5,12 @@
     "title": "Vṛndāvana: seven temples",
     "title_deva": null,
     "summary": "A devotional walk through the seven temple tradition, from Madana-mohana to Śyāmasundara.",
-    "body": "This route follows the seven temples remembered together in Vraja's worship tradition. It begins at Madana-mohana, crosses to Govindadeva, then turns through Rādhā-Dāmodara and the Keshī-ghāṭa shrines before finishing at Śyāmasundara in the heart of Vṛndāvana.\n\nAll seven stops now have map pins. Distances are straight-line estimates between them, not measured walking paths through the lanes.",
-    "source_ref": "Curated from Vraja Mandala place and story entries; original route notes; map pins checked 2026-11-25.",
+    "body": "This route follows the seven temples remembered together in Vraja's worship tradition. It begins at Madana-mohana, crosses to Govindadeva, then turns through Rādhā-Dāmodara and the Keshī-ghāṭa shrines before finishing at Śyāmasundara in the heart of Vṛndāvana.\n\nAll seven stops are located on the map. Distances are straight-line estimates between them, not measured walking paths through the lanes.",
+    "source_ref": "",
     "status": "draft",
-    "stories": ["seven-temples-of-vrindavana"],
+    "stories": [
+      "seven-temples-of-vrindavana"
+    ],
     "stops": [
       {
         "place": "madana-mohana-temple",
@@ -46,10 +48,13 @@
     "title": "Govardhana half-day",
     "title_deva": null,
     "summary": "A mapped half-day sample of Govardhana parikrama, from Jatipura to Mānasī Gaṅgā.",
-    "body": "This half-day walk samples the Govardhana parikrama from Jatipura on the hill's western side to Mānasī Gaṅgā on the eastern side. It passes Govinda-kuṇḍa and Surabhi-kuṇḍa, turns through Aaniyor and Dāna-ghāṭī, and ends at the Harideva and Mānasī Devī shrines.\n\nEvery stop is in the Govardhana area, not in Vṛndāvana town. Distances are straight-line estimates between mapped pins; the roads and lanes of the actual parikrama will usually be longer.",
-    "source_ref": "Curated from Vraja Mandala place and story entries; original route notes; map pins checked 2026-11-25.",
+    "body": "This half-day walk samples the Govardhana parikrama from Jatipura on the hill's western side to Mānasī Gaṅgā on the eastern side. It passes Govinda-kuṇḍa and Surabhi-kuṇḍa, turns through Aaniyor and Dāna-ghāṭī, and ends at the Harideva and Mānasī Devī shrines.\n\nEvery stop is in the Govardhana area, not in Vṛndāvana town. Distances are straight-line estimates between located stops; the roads and lanes of the actual parikrama will usually be longer.",
+    "source_ref": "",
     "status": "draft",
-    "stories": ["govardhana-lifted", "sixteen-deities-of-vajranabha"],
+    "stories": [
+      "govardhana-lifted",
+      "sixteen-deities-of-vajranabha"
+    ],
     "stops": [
       {
         "place": "jatipura",
@@ -87,8 +92,8 @@
     "title": "Rādhā-kuṇḍa circuit",
     "title_deva": null,
     "summary": "A mapped loop around the lakes, groves and āśramas of the Rādhā-kuṇḍa area.",
-    "body": "This circuit uses the places around Rādhā-kuṇḍa that already have coordinates in the app. It moves through Nārada-kuṇḍa and Uddhava-kuṇḍa, passes Gvāla-pokharā and Mukharavinda, and turns through Cakaleśvara before reaching a quiet āśrama stop.\n\nThe kundas themselves remain central to meditation here, even where their map pins are still being checked. Distances are straight-line estimates between the located stops.",
-    "source_ref": "Curated from Vraja Mandala place and story entries; original route notes.",
+    "body": "This circuit uses the places around Rādhā-kuṇḍa. It moves through Nārada-kuṇḍa and Uddhava-kuṇḍa, passes Gvāla-pokharā and Mukharavinda, and turns through Cakaleśvara before reaching a quiet āśrama stop.\n\nThe kundas themselves remain central to meditation here. Distances are straight-line estimates between the located stops.",
+    "source_ref": "",
     "status": "draft",
     "stories": [],
     "stops": [

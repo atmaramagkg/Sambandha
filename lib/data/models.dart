@@ -27,6 +27,20 @@ EntityKind? entityKindFromKey(String key) {
   return null;
 }
 
+final _preciseShastraReference = RegExp(
+  r'^(?:Śrīmad-Bhāgavatam|Bhagavad-gītā)\s+\d',
+);
+
+/// Returns a reference only when it is a precise shastra citation.
+String? preciseShastraReference(String value) {
+  final reference = value.trim();
+  if (reference.isEmpty || !_preciseShastraReference.hasMatch(reference)) {
+    return null;
+  }
+  if (reference.contains(RegExp(r'https?://'))) return null;
+  return reference;
+}
+
 /// One page of content: a personality, a place or a story.
 class Entry {
   const Entry({
@@ -65,6 +79,14 @@ class Entry {
 
   /// True when this page has usable coordinates for map/radius features.
   bool get hasCoordinates => latitude != null && longitude != null;
+
+  /// Google Maps link for located places; no link is shown without a pin.
+  String? get googleMapsUrl => hasCoordinates
+      ? 'https://www.google.com/maps/search/?api=1&query=$latitude,$longitude'
+      : null;
+
+  /// Only precise shastra citations are shown as references.
+  String? get shastraReference => preciseShastraReference(sourceRef);
 
   /// Route of this entry's page.
   String get path => '/entry/${kind.key}/$id';
@@ -145,6 +167,9 @@ class ParikramaRoute {
   final List<Entry> stories;
 
   String get path => '/route/$slug';
+
+  /// Only precise shastra citations are shown as references.
+  String? get shastraReference => preciseShastraReference(sourceRef);
 
   List<String> get paragraphs => body
       .split(RegExp(r'\n\s*\n'))

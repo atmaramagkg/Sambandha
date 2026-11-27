@@ -105,7 +105,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                 child: Text(
                   '${nearby.length} ${nearby.length == 1 ? 'place' : 'places'} '
                   'within ${_radiusMeters ~/ 1000} km · '
-                  '${located.length} of ${entries.length} places have coordinates',
+                  '${located.length} of ${entries.length} places on the map',
                   style: theme.textTheme.bodySmall,
                 ),
               ),

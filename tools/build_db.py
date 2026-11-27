@@ -11,7 +11,8 @@ Output:
 
 Content rules enforced here (the build fails if one is broken):
   * every record has a unique integer id, a unique slug and a unique title
-  * every record has a non-empty body and a source_ref
+  * every record has a non-empty body
+  * source_ref is optional and is kept only for precise shastra references
   * status is "draft" or "reviewed"
   * user-facing text contains no attribution to the source book used for notes
   * every slug used in a link, relation or route stop exists
@@ -37,6 +38,14 @@ FORBIDDEN_SOURCE = re.compile(
     r"(?i)\b(?:śivarāma|sivarama|nava[- ]vraja[- ]mahimā|nvm)\b"
     r"|\b(?:book|excerpts?|chapter|author)\b"
     r"|\bthe text\b"
+    r"|google maps|user-provided|saved places|coordinate_source"
+    r"|source:|address:|coordinates:"
+    r"|\b(?:itinerary|catalogue|bibliography|footnote)\b"
+    r"|https?://"
+)
+
+PRECISE_SHASTRA = re.compile(
+    r"^(?:Śrīmad-Bhāgavatam|Bhagavad-gītā)\s+\d"
 )
 
 SCHEMA = """
@@ -53,7 +62,7 @@ CREATE TABLE place (
   title TEXT NOT NULL, title_deva TEXT, summary TEXT NOT NULL,
   body TEXT NOT NULL, source_ref TEXT NOT NULL, status TEXT NOT NULL,
   latitude REAL, longitude REAL,
-  coordinate_confidence TEXT, coordinate_source TEXT,
+  coordinate_confidence TEXT,
   PRIMARY KEY (id, lang)
 );
 CREATE TABLE story (
@@ -123,7 +132,7 @@ def load(lang, kind):
 
 def check_record(lang, kind, rec):
     where = f"{lang}/{kind} id={rec.get('id')} slug={rec.get('slug')}"
-    for field in ("id", "slug", "title", "summary", "body", "source_ref", "status"):
+    for field in ("id", "slug", "title", "summary", "body", "status"):
         if field not in rec or rec[field] in ("", None):
             fail(f"{where}: missing '{field}'")
     if not isinstance(rec["id"], int):
@@ -131,8 +140,11 @@ def check_record(lang, kind, rec):
     if rec["status"] not in STATUSES:
         fail(f"{where}: status must be one of {sorted(STATUSES)}")
     for field in ("summary", "body", "source_ref"):
-        if FORBIDDEN_SOURCE.search(str(rec[field])):
+        if FORBIDDEN_SOURCE.search(str(rec.get(field, ""))):
             fail(f"{where}: contains a source-attribution phrase in '{field}'")
+    reference = str(rec.get("source_ref", "")).strip()
+    if reference and not PRECISE_SHASTRA.match(reference):
+        fail(f"{where}: source_ref must be empty or a precise shastra citation")
 
 
 def main():
@@ -190,26 +202,25 @@ def main():
                     if lng is not None and not isinstance(lng, (int, float)):
                         fail(f"{lang}/{kind} '{rec['slug']}': longitude must be a number")
                     confidence = rec.get("coordinate_confidence")
-                    coordinate_source = rec.get("coordinate_source")
                     if confidence is not None and confidence not in COORDINATE_CONFIDENCES:
                         fail(f"{lang}/{kind} '{rec['slug']}': unknown coordinate_confidence")
-                    if lat is None and (confidence is not None or coordinate_source is not None):
+                    if lat is None and confidence is not None:
                         fail(f"{lang}/{kind} '{rec['slug']}': coordinate metadata needs coordinates")
                     con.execute(
                         "INSERT INTO place (id, slug, lang, title, title_deva, summary, "
                         "body, source_ref, status, latitude, longitude, "
-                        "coordinate_confidence, coordinate_source) "
-                        "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                        "coordinate_confidence) "
+                        "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
                         (rec["id"], rec["slug"], lang, rec["title"], rec.get("title_deva"),
-                         rec["summary"], rec["body"], rec["source_ref"], rec["status"],
-                         lat, lng, confidence, coordinate_source),
+                         rec["summary"], rec["body"], rec.get("source_ref", ""), rec["status"],
+                         lat, lng, confidence),
                     )
                 else:
                     con.execute(
                         f"INSERT INTO {kind} (id, slug, lang, title, title_deva, summary, "
                         "body, source_ref, status) VALUES (?,?,?,?,?,?,?,?,?)",
                         (rec["id"], rec["slug"], lang, rec["title"], rec.get("title_deva"),
-                         rec["summary"], rec["body"], rec["source_ref"], rec["status"]),
+                         rec["summary"], rec["body"], rec.get("source_ref", ""), rec["status"]),
                     )
 
     # links are language independent: taken from the base language only
