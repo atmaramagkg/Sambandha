@@ -34,6 +34,11 @@ void main() {
     expect(logger.warnings, isEmpty);
   });
 
+  test('offline style cache version invalidates stale rendered tiles', () {
+    final style = _readStyle();
+    expect((style['metadata'] as Map)['version'], '2.0');
+  });
+
   test('bundled BBBike extract renders a visible Vraja tile', () async {
     const extractPath = 'assets/maps/vraja-mandala.mbtiles';
     if (!File(extractPath).existsSync()) {

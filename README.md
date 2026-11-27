@@ -114,8 +114,10 @@ water, land cover and buildings; text labels are omitted because no font
 files are bundled. Its filters use the legacy `["in", "class", ...]` form
 required by `vector_tile_renderer` — Mapbox expression filters such as
 `["in", ["get", "class"], ["literal", [...]]]` are ignored, leaving the map
-blank except for the background. Keep the extract's zoom range modest so the
-app package stays small. BBBike extracts are generated from OpenStreetMap data
+blank except for the background. Bump `metadata.version` whenever the style
+changes: rendered tiles are cached by theme version, so an unchanged version
+keeps serving old blank tiles. Keep the extract's zoom range modest so the app
+package stays small. BBBike extracts are generated from OpenStreetMap data
 (© OpenStreetMap contributors, ODbL 1.0) and may expire; request a fresh
 extract when needed. Attribution is shown on both maps.
 

@@ -34,6 +34,7 @@ class _BasemapLayerState extends State<BasemapLayer> {
   MbTiles? _mbtiles;
   vtr.Theme? _theme;
   TileProviders? _tileProviders;
+  Directory? _cacheFolder;
   bool _checked = false;
 
   @override
@@ -65,6 +66,11 @@ class _BasemapLayerState extends State<BasemapLayer> {
 
       final styleText = await rootBundle.loadString(MapConfig.offlineStyleAsset);
       final style = jsonDecode(styleText) as Map<String, dynamic>;
+      final styleVersion =
+          (style['metadata'] as Map?)?['version']?.toString() ?? '0';
+      // Rendered tiles are cached by theme version. Keep our cache outside the
+      // OS temp folder so an old style version can never be reused silently.
+      _cacheFolder = Directory(p.join(dir, 'tile-cache', styleVersion));
       final mbtiles = MbTiles(path: dest);
       _theme = vtr.ThemeReader(logger: const vtr.Logger.console()).read(style);
       _tileProviders = TileProviders({
@@ -82,6 +88,7 @@ class _BasemapLayerState extends State<BasemapLayer> {
       _mbtiles = null;
       _theme = null;
       _tileProviders = null;
+      _cacheFolder = null;
     }
     if (mounted) setState(() => _checked = true);
   }
@@ -109,6 +116,13 @@ class _BasemapLayerState extends State<BasemapLayer> {
       theme: theme,
       tileProviders: providers,
       maximumZoom: MapConfig.maxZoom,
+      // vector_map_tiles resolves this type to dart:io at runtime, but the
+      // analyzer sees its web stub (String). Returning dynamic satisfies both.
+      cacheFolder: () async {
+        final folder = _cacheFolder;
+        if (folder == null) throw StateError('Offline basemap is not ready');
+        return folder as dynamic;
+      },
     );
   }
 }
