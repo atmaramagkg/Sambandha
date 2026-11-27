@@ -22,7 +22,7 @@
       "type": "fill",
       "source": "openmaptiles",
       "source-layer": "water",
-      "filter": ["in", ["get", "class"], ["literal", ["lake", "river", "reservoir", "pond", "dock", "water"]]],
+      "filter": ["in", "class", "lake", "river", "reservoir", "pond", "dock", "water"],
       "paint": {"fill-color": "#bfd9f2"}
     },
     {
@@ -30,7 +30,7 @@
       "type": "fill",
       "source": "openmaptiles",
       "source-layer": "landcover",
-      "filter": ["in", ["get", "class"], ["literal", ["forest", "wood", "scrub"]]],
+      "filter": ["in", "class", "forest", "wood", "scrub"],
       "paint": {"fill-color": "#cbe5b8"}
     },
     {
@@ -38,7 +38,7 @@
       "type": "fill",
       "source": "openmaptiles",
       "source-layer": "landcover",
-      "filter": ["in", ["get", "class"], ["literal", ["grass", "grassland", "meadow", "wetland"]]],
+      "filter": ["in", "class", "grass", "grassland", "meadow", "wetland"],
       "paint": {"fill-color": "#d9e9c9"}
     },
     {
@@ -46,7 +46,7 @@
       "type": "fill",
       "source": "openmaptiles",
       "source-layer": "landuse",
-      "filter": ["in", ["get", "class"], ["literal", ["farmland", "farmyard", "orchard", "vineyard"]]],
+      "filter": ["in", "class", "farmland", "farmyard", "orchard", "vineyard"],
       "paint": {"fill-color": "#eaf3cf"}
     },
     {
@@ -54,7 +54,7 @@
       "type": "fill",
       "source": "openmaptiles",
       "source-layer": "landuse",
-      "filter": ["in", ["get", "class"], ["literal", ["residential", "commercial", "industrial", "retail"]]],
+      "filter": ["in", "class", "residential", "commercial", "industrial", "retail"],
       "paint": {"fill-color": "#f1ece6"}
     },
     {
@@ -69,7 +69,7 @@
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "waterway",
-      "filter": ["in", ["get", "class"], ["literal", ["stream", "river", "canal", "ditch", "drain"]]],
+      "filter": ["in", "class", "stream", "river", "canal", "ditch", "drain"],
       "paint": {"line-color": "#a6caed", "line-width": 2, "line-cap": "round", "line-join": "round"}
     },
     {
@@ -85,7 +85,7 @@
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "filter": ["in", ["get", "class"], ["literal", ["minor", "service", "track", "path"]]],
+      "filter": ["in", "class", "minor", "service", "track", "path"],
       "paint": {"line-color": "#d8d3cc", "line-width": 4, "line-cap": "round", "line-join": "round"}
     },
     {
@@ -93,7 +93,7 @@
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "filter": ["in", ["get", "class"], ["literal", ["minor", "service", "track", "path"]]],
+      "filter": ["in", "class", "minor", "service", "track", "path"],
       "paint": {"line-color": "#ffffff", "line-width": 2.5, "line-cap": "round", "line-join": "round"}
     },
     {
@@ -101,7 +101,7 @@
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "filter": ["in", ["get", "class"], ["literal", ["tertiary", "secondary", "primary", "trunk", "motorway"]]],
+      "filter": ["in", "class", "tertiary", "secondary", "primary", "trunk", "motorway"],
       "paint": {"line-color": "#d8b45f", "line-width": 6, "line-cap": "round", "line-join": "round"}
     },
     {
@@ -109,7 +109,7 @@
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "filter": ["in", ["get", "class"], ["literal", ["tertiary", "secondary", "primary", "trunk", "motorway"]]],
+      "filter": ["in", "class", "tertiary", "secondary", "primary", "trunk", "motorway"],
       "paint": {"line-color": "#ffe3a3", "line-width": 4, "line-cap": "round", "line-join": "round"}
     }
   ]

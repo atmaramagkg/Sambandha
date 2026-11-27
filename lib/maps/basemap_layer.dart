@@ -66,15 +66,18 @@ class _BasemapLayerState extends State<BasemapLayer> {
       final styleText = await rootBundle.loadString(MapConfig.offlineStyleAsset);
       final style = jsonDecode(styleText) as Map<String, dynamic>;
       final mbtiles = MbTiles(path: dest);
-      _theme = vtr.ThemeReader().read(style);
+      _theme = vtr.ThemeReader(logger: const vtr.Logger.console()).read(style);
       _tileProviders = TileProviders({
         MapConfig.offlineTileSource: MbTilesVectorTileProvider(
           mbtiles: mbtiles,
         ),
       });
       _mbtiles = mbtiles;
-    } catch (_) {
-      // No extract bundled, or it could not be opened: use online tiles.
+    } catch (error, stack) {
+      // No extract bundled, or it could not be opened: use online tiles, but
+      // make the reason visible in the console instead of failing silently.
+      debugPrint('Offline basemap unavailable; using online tiles: $error');
+      debugPrint('$stack');
       _mbtiles?.close();
       _mbtiles = null;
       _theme = null;

@@ -111,8 +111,11 @@ interactively in a browser (do not automate or scrape it):
 
 The offline style is `assets/maps/openmaptiles-style.json`. It draws roads,
 water, land cover and buildings; text labels are omitted because no font
-files are bundled. Keep the extract's zoom range modest so the app package
-stays small. BBBike extracts are generated from OpenStreetMap data
+files are bundled. Its filters use the legacy `["in", "class", ...]` form
+required by `vector_tile_renderer` — Mapbox expression filters such as
+`["in", ["get", "class"], ["literal", [...]]]` are ignored, leaving the map
+blank except for the background. Keep the extract's zoom range modest so the
+app package stays small. BBBike extracts are generated from OpenStreetMap data
 (© OpenStreetMap contributors, ODbL 1.0) and may expire; request a fresh
 extract when needed. Attribution is shown on both maps.
 
