@@ -33,6 +33,9 @@ migrate_working_dir/
 /build/
 /coverage/
 
+# Large BBBike map extract: request it locally from https://extract.bbbike.org/
+/assets/maps/*.mbtiles
+
 # Symbolication related
 app.*.symbols
 

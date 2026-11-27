@@ -1,23 +1,28 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_map/flutter_map.dart';
-import 'package:flutter_map_mbtiles/flutter_map_mbtiles.dart';
+import 'package:mbtiles/mbtiles.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vector_map_tiles/vector_map_tiles.dart';
+import 'package:vector_map_tiles_mbtiles/vector_map_tiles_mbtiles.dart';
+import 'package:vector_tile_renderer/vector_tile_renderer.dart' as vtr;
 
 import 'map_config.dart';
 
 const _mapVersionPrefKey = 'basemap_version';
 
-/// Basemap layer that uses the bundled BBBike MBTiles extract when present.
+/// Basemap layer that uses the bundled BBBike vector MBTiles extract when
+/// present.
 ///
 /// The extract cannot be opened directly from assets, so it is copied into the
 /// app support directory on first launch (or after the bundled file changes).
-/// If no extract has been bundled yet, the layer falls back to online tiles so
-/// the maps still work on connected devices.
+/// If no extract has been bundled, the layer falls back to online tiles so the
+/// maps still work on connected devices.
 class BasemapLayer extends StatefulWidget {
   const BasemapLayer({super.key});
 
@@ -26,7 +31,9 @@ class BasemapLayer extends StatefulWidget {
 }
 
 class _BasemapLayerState extends State<BasemapLayer> {
-  MbTilesTileProvider? _offlineProvider;
+  MbTiles? _mbtiles;
+  vtr.Theme? _theme;
+  TileProviders? _tileProviders;
   bool _checked = false;
 
   @override
@@ -56,25 +63,37 @@ class _BasemapLayerState extends State<BasemapLayer> {
         await prefs.setString(_mapVersionPrefKey, version);
       }
 
-      _offlineProvider = MbTilesTileProvider.fromPath(path: dest);
+      final styleText = await rootBundle.loadString(MapConfig.offlineStyleAsset);
+      final style = jsonDecode(styleText) as Map<String, dynamic>;
+      final mbtiles = MbTiles(path: dest);
+      _theme = vtr.ThemeReader().read(style);
+      _tileProviders = TileProviders({
+        MapConfig.offlineTileSource: MbTilesVectorTileProvider(
+          mbtiles: mbtiles,
+        ),
+      });
+      _mbtiles = mbtiles;
     } catch (_) {
       // No extract bundled, or it could not be opened: use online tiles.
-      _offlineProvider?.dispose();
-      _offlineProvider = null;
+      _mbtiles?.close();
+      _mbtiles = null;
+      _theme = null;
+      _tileProviders = null;
     }
     if (mounted) setState(() => _checked = true);
   }
 
   @override
   void dispose() {
-    _offlineProvider?.dispose();
+    _mbtiles?.close();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final provider = _offlineProvider;
-    if (!_checked || provider == null) {
+    final theme = _theme;
+    final providers = _tileProviders;
+    if (!_checked || theme == null || providers == null) {
       return TileLayer(
         urlTemplate: MapConfig.onlineTileUrl,
         userAgentPackageName: MapConfig.userAgentPackageName,
@@ -83,11 +102,10 @@ class _BasemapLayerState extends State<BasemapLayer> {
         maxNativeZoom: MapConfig.maxNativeZoom,
       );
     }
-    return TileLayer(
-      tileProvider: provider,
-      minZoom: MapConfig.minZoom,
-      maxZoom: MapConfig.maxZoom,
-      maxNativeZoom: MapConfig.maxNativeZoom,
+    return VectorTileLayer(
+      theme: theme,
+      tileProviders: providers,
+      maximumZoom: MapConfig.maxZoom,
     );
   }
 }

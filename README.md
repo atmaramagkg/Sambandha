@@ -82,7 +82,7 @@ nearby list include only places with coordinates; the list is sorted by
 distance.
 
 Place data and the radius calculation are local and work offline. Both map
-screens share `lib/maps/basemap_layer.dart`: it uses a bundled BBBike raster
+screens share `lib/maps/basemap_layer.dart`: it uses a bundled BBBike vector
 MBTiles extract when one is available, and otherwise falls back to online
 OpenStreetMap tiles. Android release builds include the `INTERNET` permission
 for that fallback.
@@ -95,17 +95,21 @@ interactively in a browser (do not automate or scrape it):
 1. Open https://extract.bbbike.org/ and draw or enter a bounding box covering
    Vraja Mandala. A suitable box is west `77.1`, south `27.2`, east `78.1`,
    north `28.0`.
-2. Choose the raster **MBTiles** output format (PNG/JPEG/WebP tiles, not the
-   vector Shortbread format), enter your email and submit the request.
+2. Choose **MBTiles Basic**. BBBike produces vector PBF tiles in the
+   OpenMapTiles schema, which is what the app renders. Do not choose the
+   Shortbread or PMTiles variants — they use a different schema/format.
 3. When the download link arrives, save the extract as
-   `assets/maps/vraja-mandala.mbtiles`.
+   `assets/maps/vraja-mandala.mbtiles`. This large file is gitignored: keep it
+   in your local project folder so local builds include it.
 4. Rebuild the app. On first launch the app copies the extract into its support
    folder and uses it for both screens, with no network connection needed.
 
-Keep the extract's zoom range modest so the app package stays small. BBBike
-extracts are generated from OpenStreetMap data (© OpenStreetMap contributors,
-ODbL 1.0) and may expire; request a fresh extract when needed. Attribution is
-shown on both maps.
+The offline style is `assets/maps/openmaptiles-style.json`. It draws roads,
+water, land cover and buildings; text labels are omitted because no font
+files are bundled. Keep the extract's zoom range modest so the app package
+stays small. BBBike extracts are generated from OpenStreetMap data
+(© OpenStreetMap contributors, ODbL 1.0) and may expire; request a fresh
+extract when needed. Attribution is shown on both maps.
 
 ## Guided parikrama routes
 
@@ -149,7 +153,7 @@ lib/maps/                 shared basemap layer and configuration
 lib/providers.dart        Riverpod providers (content, routes, search, saved)
 lib/screens/              home, lists, entry, map, routes, search, saved, about
 lib/utils/geo.dart        haversine distance for radius and route legs
-assets/maps/              optional BBBike raster MBTiles extract
+assets/maps/              optional BBBike vector MBTiles extract and style
 lib/widgets/common.dart   shared tiles and related-links section
 ```
 

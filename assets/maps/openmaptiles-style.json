@@ -1,0 +1,116 @@
+{
+  "version": 8,
+  "name": "Vraja Mandala offline",
+  "metadata": {"version": "1.0"},
+  "sources": {
+    "openmaptiles": {
+      "type": "vector",
+      "tiles": [],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "attribution": "© OpenStreetMap contributors"
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {"background-color": "#f7f3ee"}
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "water",
+      "filter": ["in", ["get", "class"], ["literal", ["lake", "river", "reservoir", "pond", "dock", "water"]]],
+      "paint": {"fill-color": "#bfd9f2"}
+    },
+    {
+      "id": "landcover-forest",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "filter": ["in", ["get", "class"], ["literal", ["forest", "wood", "scrub"]]],
+      "paint": {"fill-color": "#cbe5b8"}
+    },
+    {
+      "id": "landcover-grass",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "filter": ["in", ["get", "class"], ["literal", ["grass", "grassland", "meadow", "wetland"]]],
+      "paint": {"fill-color": "#d9e9c9"}
+    },
+    {
+      "id": "landuse-farmland",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landuse",
+      "filter": ["in", ["get", "class"], ["literal", ["farmland", "farmyard", "orchard", "vineyard"]]],
+      "paint": {"fill-color": "#eaf3cf"}
+    },
+    {
+      "id": "landuse-residential",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landuse",
+      "filter": ["in", ["get", "class"], ["literal", ["residential", "commercial", "industrial", "retail"]]],
+      "paint": {"fill-color": "#f1ece6"}
+    },
+    {
+      "id": "park",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "park",
+      "paint": {"fill-color": "#d2dfb3"}
+    },
+    {
+      "id": "waterway",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "waterway",
+      "filter": ["in", ["get", "class"], ["literal", ["stream", "river", "canal", "ditch", "drain"]]],
+      "paint": {"line-color": "#a6caed", "line-width": 2, "line-cap": "round", "line-join": "round"}
+    },
+    {
+      "id": "building",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "building",
+      "minzoom": 13,
+      "paint": {"fill-color": "#e5dfd8", "fill-outline-color": "#cdc5bb"}
+    },
+    {
+      "id": "minor-road-casing",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": ["in", ["get", "class"], ["literal", ["minor", "service", "track", "path"]]],
+      "paint": {"line-color": "#d8d3cc", "line-width": 4, "line-cap": "round", "line-join": "round"}
+    },
+    {
+      "id": "minor-road",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": ["in", ["get", "class"], ["literal", ["minor", "service", "track", "path"]]],
+      "paint": {"line-color": "#ffffff", "line-width": 2.5, "line-cap": "round", "line-join": "round"}
+    },
+    {
+      "id": "major-road-casing",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": ["in", ["get", "class"], ["literal", ["tertiary", "secondary", "primary", "trunk", "motorway"]]],
+      "paint": {"line-color": "#d8b45f", "line-width": 6, "line-cap": "round", "line-join": "round"}
+    },
+    {
+      "id": "major-road",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": ["in", ["get", "class"], ["literal", ["tertiary", "secondary", "primary", "trunk", "motorway"]]],
+      "paint": {"line-color": "#ffe3a3", "line-width": 4, "line-cap": "round", "line-join": "round"}
+    }
+  ]
+}
