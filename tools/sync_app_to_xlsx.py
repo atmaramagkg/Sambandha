@@ -4,8 +4,8 @@
 The app is the source of truth. This tool updates title, coordinates,
 coordinate confidence, description and app ID for every matching place row.
 The old Google match/address and coordinate-source columns are replaced by a
-single Google Maps link column: a link is written only when a place has both
-coordinates.
+single Google Maps link column: a clickable link is written only when a place
+has both coordinates.
 
 Six spreadsheet spellings are kept as variant rows rather than separate app
 places. They are linked to their app ID and receive the same reviewed wording,
@@ -32,9 +32,23 @@ PLACES = ROOT / "content/en/places.json"
 XLSX = Path(r"C:\Users\austr\OneDrive\Documents\holy_places.xlsx")
 BACKUP = Path(r"C:\Users\austr\AppData\Local\Temp\opencode\holy_places-before-app-sync.xlsx")
 SHEET = "xl/worksheets/sheet1.xml"
+SHEET2 = "xl/worksheets/sheet2.xml"
+RELS = "xl/worksheets/_rels/sheet1.xml.rels"
 TABLE = "xl/tables/table1.xml"
 SHARED = "xl/sharedStrings.xml"
+STYLES = "xl/styles.xml"
 NS = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
+REL_NS = "http://schemas.openxmlformats.org/package/2006/relationships"
+OFFICE_REL_NS = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+
+NOTES = [
+    "Place names are working matches from the app, merged across spelling variants; not a verified index.",
+    "Mentions: occurrences recorded in the app data.",
+    "Latitude/longitude: coordinates recorded in the app, with a confidence value where available.",
+    "Google Maps link: opens the coordinate in Google Maps; blank when no coordinate is available.",
+    "Descriptions are editorial summaries; consult the precise shastra reference for verification.",
+    "This workbook is regenerated from the app; app content is the source of truth.",
+]
 
 # Spreadsheet spelling variant -> app place ID. Coordinates are not replaced
 # for these rows because the variant is not an exact app title.
@@ -139,10 +153,14 @@ def clean_description(body):
     return body.replace("\r\n", "\n").replace("\n\n", "\n")
 
 
-def compact_shared_strings(shared_xml, sheet_xml):
+def compact_shared_strings(shared_xml, sheet_xmls):
     """Remove unused strings so no legacy addresses survive inside the workbook."""
     used = sorted(
-        {int(index) for index in re.findall(r'<c\b[^>]*\bt="s"[^>]*><v>(\d+)</v></c>', sheet_xml)}
+        {
+            int(index)
+            for sheet_xml in sheet_xmls
+            for index in re.findall(r'<c\b[^>]*\bt="s"[^>]*><v>(\d+)</v></c>', sheet_xml)
+        }
     )
     remap = {old: new for new, old in enumerate(used)}
 
@@ -151,11 +169,10 @@ def compact_shared_strings(shared_xml, sheet_xml):
             f"{match.group(1)}<v>{remap[int(match.group(2))]}</v>{match.group(3)}"
         )
 
-    new_sheet = re.sub(
-        r'(<c\b[^>]*\bt="s"[^>]*>)<v>(\d+)</v>(</c>)',
-        rewrite_cell,
-        sheet_xml,
-    )
+    rewritten = [
+        re.sub(r'(<c\b[^>]*\bt="s"[^>]*>)<v>(\d+)</v>(</c>)', rewrite_cell, sheet_xml)
+        for sheet_xml in sheet_xmls
+    ]
     items = re.findall(r"<si>.*?</si>", shared_xml, flags=re.S)
     new_shared = re.sub(
         r"<sst\b([^>]*)>",
@@ -169,7 +186,120 @@ def compact_shared_strings(shared_xml, sheet_xml):
     new_shared = new_shared.replace(
         "</sst>", "".join(items[index] for index in used) + "</sst>", 1
     )
-    return new_sheet, new_shared
+    return rewritten, new_shared
+
+
+def clean_notes_sheet(sheet_xml):
+    """Replace legacy provenance notes with clean, app-derived notes."""
+    rows = "".join(
+        f'<row r="{index}"><c r="A{index}" t="inlineStr">'
+        f'<is><t xml:space="preserve">{escape(note)}</t></is></c></row>'
+        for index, note in enumerate(NOTES, start=1)
+    )
+    return re.sub(
+        r"<sheetData\b[^>]*>.*?</sheetData>",
+        f'<sheetData>{rows}</sheetData>',
+        sheet_xml,
+        count=1,
+        flags=re.S,
+    )
+
+
+def add_hyperlink_style(styles_xml):
+    """Add a blue underlined cell style for clickable map links."""
+    font = (
+        '<font><u/><sz val="11"/><color rgb="FF0563C1"/>'
+        '<name val="Calibri"/><family val="2"/><scheme val="minor"/></font>'
+    )
+    fonts = re.search(r"(<fonts\b[^>]*>)(.*?)(</fonts>)", styles_xml, flags=re.S)
+    xfs = re.search(r"(<cellXfs\b[^>]*>)(.*?)(</cellXfs>)", styles_xml, flags=re.S)
+    if fonts is None or xfs is None:
+        raise SystemExit("Workbook styles are missing fonts or cellXfs")
+
+    font_items = re.findall(r"<font>.*?</font>", fonts.group(2), flags=re.S)
+    if font not in font_items:
+        font_items.append(font)
+    font_id = font_items.index(font)
+    fonts_open = re.sub(
+        r'\bcount="\d+"', f'count="{len(font_items)}"', fonts.group(1), count=1
+    )
+    styles_xml = (
+        styles_xml[: fonts.start()]
+        + fonts_open
+        + "".join(font_items)
+        + fonts.group(3)
+        + styles_xml[fonts.end() :]
+    )
+
+    xfs = re.search(r"(<cellXfs\b[^>]*>)(.*?)(</cellXfs>)", styles_xml, flags=re.S)
+    xf_items = re.findall(
+        r'<xf\b[^>]*?/>|<xf\b[^>]*>.*?</xf>', xfs.group(2), flags=re.S
+    )
+    xf = (
+        f'<xf numFmtId="0" fontId="{font_id}" fillId="0" borderId="0" xfId="0"'
+        ' applyFont="1" applyAlignment="1">'
+        '<alignment horizontal="center" vertical="center"/></xf>'
+    )
+    if xf not in xf_items:
+        xf_items.append(xf)
+    style_index = xf_items.index(xf)
+    xfs_open = re.sub(
+        r'\bcount="\d+"', f'count="{len(xf_items)}"', xfs.group(1), count=1
+    )
+    styles_xml = (
+        styles_xml[: xfs.start()]
+        + xfs_open
+        + "".join(xf_items)
+        + xfs.group(3)
+        + styles_xml[xfs.end() :]
+    )
+    return styles_xml, str(style_index)
+
+
+def add_hyperlinks(sheet_xml, rels_xml, links):
+    """Write external hyperlink relationships for the Google Maps cells."""
+    if not links:
+        return sheet_xml, rels_xml.encode("utf-8")
+
+    rels = re.sub(
+        r'<Relationship\b[^>]*Type="[^"]*/hyperlink"[^>]*/>', "", rels_xml
+    )
+    used_ids = [int(value) for value in re.findall(r'Id="rId(\d+)"', rels)]
+    next_id = max(used_ids, default=0) + 1
+    hyperlink_items = []
+    relationship_items = []
+    for ref in sorted(links, key=lambda value: int(re.search(r"\d+", value).group())):
+        rid = f"rId{next_id}"
+        next_id += 1
+        hyperlink_items.append(f'<hyperlink ref="{ref}" r:id="{rid}"/>')
+        target = escape(links[ref], {'"': "&quot;"})
+        relationship_items.append(
+            f'<Relationship Id="{rid}" Type="{OFFICE_REL_NS}/hyperlink"'
+            f' Target="{target}" TargetMode="External"/>'
+        )
+
+    sheet_xml = re.sub(r"<hyperlinks\b.*?</hyperlinks>", "", sheet_xml, flags=re.S)
+    if "xmlns:r=" not in sheet_xml[:1200]:
+        sheet_xml = re.sub(
+            r"<worksheet\b",
+            f'<worksheet xmlns:r="{OFFICE_REL_NS}"',
+            sheet_xml,
+            count=1,
+        )
+    block = "<hyperlinks>" + "".join(hyperlink_items) + "</hyperlinks>"
+    insertion = re.search(
+        r"<(?:pageMargins|pageSetup|printOptions|headerFooter|drawing|tableParts|extLst)\b",
+        sheet_xml,
+    )
+    if insertion:
+        sheet_xml = sheet_xml[: insertion.start()] + block + sheet_xml[insertion.start() :]
+    else:
+        sheet_xml = sheet_xml.replace("</worksheet>", block + "</worksheet>", 1)
+
+    rels = rels.replace(
+        "</Relationships>", "".join(relationship_items) + "</Relationships>", 1
+    )
+    return sheet_xml, rels.encode("utf-8")
 
 
 def main():
@@ -183,14 +313,31 @@ def main():
     with zipfile.ZipFile(XLSX) as archive:
         entries = [(info, archive.read(info.filename)) for info in archive.infolist()]
         sheet = archive.read(SHEET).decode("utf-8")
+        sheet2 = archive.read(SHEET2).decode("utf-8")
+        rels = (
+            archive.read(RELS).decode("utf-8")
+            if RELS in archive.namelist()
+            else f'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n'
+            f'<Relationships xmlns="{REL_NS}"/>'
+        )
         table = archive.read(TABLE).decode("utf-8")
         shared_xml = archive.read(SHARED).decode("utf-8")
+        styles = archive.read(STYLES).decode("utf-8")
         strings = shared_strings(archive)
 
+    styles, link_style = add_hyperlink_style(styles)
     root = ET.fromstring(sheet)
     rows = root.findall("m:sheetData/m:row", NS)
     last_row = int(rows[-1].attrib["r"])
-    stats = {"matched": 0, "variants": 0, "coords": 0, "links": 0, "descriptions": 0}
+    stats = {
+        "matched": 0,
+        "variants": 0,
+        "coords": 0,
+        "links": 0,
+        "hyperlinks": 0,
+        "descriptions": 0,
+    }
+    hyperlinks = {}
 
     def replace_row(match):
         row_xml = match.group(0)
@@ -236,9 +383,13 @@ def main():
             longitude = cell_text(cells.get("F"), strings) if "F" in cells else ""
 
         link = maps_link(latitude, longitude)
+        link_cell_style = style_of(raw.get("H", ""))
         if link:
             stats["links"] += 1
-        raw["H"] = inline(f"H{row_num}", link, style_of(raw.get("H", "")))
+            stats["hyperlinks"] += 1
+            hyperlinks[f"H{row_num}"] = link
+            link_cell_style = link_style
+        raw["H"] = inline(f"H{row_num}", link, link_cell_style)
 
         description = clean_description(place["body"])
         old_description = cell_text(cells.get("I"), strings) if "I" in cells else ""
@@ -261,7 +412,12 @@ def main():
         new_sheet,
         count=1,
     )
-    new_sheet, new_shared = compact_shared_strings(shared_xml, new_sheet)
+    new_sheet, new_rels = add_hyperlinks(new_sheet, rels, hyperlinks)
+    new_sheet2 = clean_notes_sheet(sheet2)
+    rewritten, new_shared = compact_shared_strings(
+        shared_xml, [new_sheet, new_sheet2]
+    )
+    new_sheet, new_sheet2 = rewritten
 
     new_table = table
     new_table = re.sub(r'ref="A1:[A-Z]+\d+"', f'ref="A1:K{last_row}"', new_table)
@@ -294,6 +450,7 @@ def main():
     print("spelling variants linked:", stats["variants"])
     print("rows with app coordinates:", stats["coords"])
     print("rows with Google Maps links:", stats["links"])
+    print("clickable Google Maps hyperlinks:", stats["hyperlinks"])
     print("descriptions changed:", stats["descriptions"])
     if not apply:
         print("dry run; pass --apply to write")
@@ -305,8 +462,11 @@ def main():
 
     updates = {
         SHEET: new_sheet.encode("utf-8"),
+        SHEET2: new_sheet2.encode("utf-8"),
+        RELS: new_rels,
         TABLE: new_table.encode("utf-8"),
         SHARED: new_shared.encode("utf-8"),
+        STYLES: styles.encode("utf-8"),
     }
     temporary = XLSX.with_suffix(".tmp.xlsx")
     with zipfile.ZipFile(temporary, "w") as output:
