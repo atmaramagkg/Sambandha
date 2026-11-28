@@ -12324,5 +12324,38 @@
     "source_ref": "",
     "status": "draft",
     "relations": []
+  },
+  {
+    "id": 1002,
+    "slug": "dvivida",
+    "title": "Dvivida",
+    "title_deva": null,
+    "summary": "A monkey demon remembered for creating disturbance until Balarāma restrained him.",
+    "body": "Dvivida appears among the demoniac opponents who disturb the order of the forest and the sages. His encounter with Balarāma brings the disruption to an end.\n\nThis is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 1003,
+    "slug": "hayagriva-demon",
+    "title": "Hayagriva, demon",
+    "title_deva": null,
+    "summary": "A demon who seized the Vedic knowledge and was overcome by the Lord's power.",
+    "body": "This Hayagriva is the demoniac figure, distinct from the Lord's horse-headed form. He is remembered as an adversary who tried to keep sacred knowledge from the world.\n\nThis is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 1004,
+    "slug": "kumbhakarna",
+    "title": "Kumbhakarna",
+    "title_deva": null,
+    "summary": "Rāvaṇa's brother, a giant warrior known for long sleep and an enormous appetite.",
+    "body": "Kumbhakarna stands beside Rāvaṇa as a formidable warrior whose strength is matched by his strange habits of sleep and eating. He is named among the opponents in the Rāma narratives.\n\nThis is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
   }
 ]
