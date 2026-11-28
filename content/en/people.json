@@ -2847,7 +2847,12 @@
     "body": "Citraratha is named among the traditional Vedic personalities. This is a short draft index entry; a fuller note can be added after review.",
     "source_ref": "",
     "status": "draft",
-    "relations": []
+    "relations": [
+      {
+        "person": "prthu-son-of-citraratha",
+        "role": "Son"
+      }
+    ]
   },
   {
     "id": 215,
@@ -9130,7 +9135,12 @@
     "body": "Yasoda is named among the traditional Vedic personalities. This is a short draft index entry; a fuller note can be added after review.",
     "source_ref": "",
     "status": "draft",
-    "relations": []
+    "relations": [
+      {
+        "person": "mukhara-maidservant-of-yasoda",
+        "role": "Maidservant"
+      }
+    ]
   },
   {
     "id": 714,
@@ -12048,6 +12058,269 @@
     "title_deva": null,
     "summary": "A gopī companion of Śrīmatī Rādhārāṇī in Vraja.",
     "body": "Vinoda-manjari is recorded among the gopīs of Vraja. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 979,
+    "slug": "kulasekhara",
+    "title": "Kulasekhara",
+    "title_deva": null,
+    "summary": "A king remembered in the Vedic narratives.",
+    "body": "Kulasekhara is remembered among the kings who appear in the Vedic narratives. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 980,
+    "slug": "malayadhvaja",
+    "title": "Malayadhvaja",
+    "title_deva": null,
+    "summary": "A king remembered in the Vedic narratives.",
+    "body": "Malayadhvaja is remembered among the kings who appear in the Vedic narratives. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 981,
+    "slug": "mayuradhvaja",
+    "title": "Mayuradhvaja",
+    "title_deva": null,
+    "summary": "A king remembered in the Vedic narratives.",
+    "body": "Mayuradhvaja is remembered among the kings who appear in the Vedic narratives. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 982,
+    "slug": "prthu-son-of-anena",
+    "title": "Prthu, son of Anena",
+    "title_deva": null,
+    "summary": "A figure identified as the son of Anena.",
+    "body": "Prthu is recorded among the traditional personalities. The name itself marks this figure as the son of Anena, which distinguishes this entry from others of the same name.\\n\\nThis is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 983,
+    "slug": "prthu-son-of-citraratha",
+    "title": "Prthu, son of Citraratha",
+    "title_deva": null,
+    "summary": "A figure identified as the son of Citraratha.",
+    "body": "Prthu is recorded among the traditional personalities. The name itself marks this figure as the son of Citraratha, which distinguishes this entry from others of the same name.\\n\\nThis is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "citraratha",
+        "role": "Father"
+      }
+    ]
+  },
+  {
+    "id": 984,
+    "slug": "prthu-son-of-rucaka",
+    "title": "Prthu, son of Rucaka",
+    "title_deva": null,
+    "summary": "A figure identified as the son of Rucaka.",
+    "body": "Prthu is recorded among the traditional personalities. The name itself marks this figure as the son of Rucaka, which distinguishes this entry from others of the same name.\\n\\nThis is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 985,
+    "slug": "prthu-son-of-tamasa",
+    "title": "Prthu, son of Tamasa",
+    "title_deva": null,
+    "summary": "A figure identified as the son of Tamasa.",
+    "body": "Prthu is recorded among the traditional personalities. The name itself marks this figure as the son of Tamasa, which distinguishes this entry from others of the same name.\\n\\nThis is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 986,
+    "slug": "emperor-asoka",
+    "title": "Emperor Asoka",
+    "title_deva": null,
+    "summary": "A king remembered in the Vedic narratives.",
+    "body": "Emperor Asoka is remembered among the kings who appear in the Vedic narratives. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 987,
+    "slug": "laksmana-sena",
+    "title": "Laksmana Sena",
+    "title_deva": null,
+    "summary": "A king remembered in the Vedic narratives.",
+    "body": "Laksmana Sena is remembered among the kings who appear in the Vedic narratives. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 988,
+    "slug": "abhimanyu-so-called-husband-of-radharani",
+    "title": "Abhimanyu, so-called husband of Radharani",
+    "title_deva": null,
+    "summary": "A figure named among the residents of Vṛndāvana.",
+    "body": "Abhimanyu is named among the figures who appear in the pastimes of Vṛndāvana. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 989,
+    "slug": "ambika",
+    "title": "Ambika",
+    "title_deva": null,
+    "summary": "A figure named among the residents of Vṛndāvana.",
+    "body": "Ambika is named among the figures who appear in the pastimes of Vṛndāvana. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 990,
+    "slug": "bhaguri-muni",
+    "title": "Bhaguri Muni",
+    "title_deva": null,
+    "summary": "A figure named among the residents of Vṛndāvana.",
+    "body": "Bhaguri Muni is named among the figures who appear in the pastimes of Vṛndāvana. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 991,
+    "slug": "bhangura",
+    "title": "Bhangura",
+    "title_deva": null,
+    "summary": "A figure named among the residents of Vṛndāvana.",
+    "body": "Bhangura is named among the figures who appear in the pastimes of Vṛndāvana. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 992,
+    "slug": "bhrngara",
+    "title": "Bhrngara",
+    "title_deva": null,
+    "summary": "A figure named among the residents of Vṛndāvana.",
+    "body": "Bhrngara is named among the figures who appear in the pastimes of Vṛndāvana. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 993,
+    "slug": "daksa-suka",
+    "title": "Daksa suka",
+    "title_deva": null,
+    "summary": "A figure named among the residents of Vṛndāvana.",
+    "body": "Daksa suka is named among the figures who appear in the pastimes of Vṛndāvana. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 994,
+    "slug": "jatila",
+    "title": "Jatila",
+    "title_deva": null,
+    "summary": "A figure named among the residents of Vṛndāvana.",
+    "body": "Jatila is named among the figures who appear in the pastimes of Vṛndāvana. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 995,
+    "slug": "kilimbika",
+    "title": "Kilimbika",
+    "title_deva": null,
+    "summary": "A figure named among the residents of Vṛndāvana.",
+    "body": "Kilimbika is named among the figures who appear in the pastimes of Vṛndāvana. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 996,
+    "slug": "kutila-sister-of-abhimanyu",
+    "title": "Kutila, sister of Abhimanyu",
+    "title_deva": null,
+    "summary": "A figure identified as the sister of Abhimanyu.",
+    "body": "Kutila is recorded among the traditional personalities. The name itself marks this figure as the sister of Abhimanyu, which distinguishes this entry from others of the same name.\\n\\nThis is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 997,
+    "slug": "mukhara",
+    "title": "Mukhara",
+    "title_deva": null,
+    "summary": "A figure named among the residents of Vṛndāvana.",
+    "body": "Mukhara is named among the figures who appear in the pastimes of Vṛndāvana. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 998,
+    "slug": "mukhara-maidservant-of-yasoda",
+    "title": "Mukhara, maidservant of Yasoda",
+    "title_deva": null,
+    "summary": "A figure identified as the maidservant of Yasoda.",
+    "body": "Mukhara is recorded among the traditional personalities. The name itself marks this figure as the maidservant of Yasoda, which distinguishes this entry from others of the same name.\\n\\nThis is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": [
+      {
+        "person": "yasoda",
+        "role": "Mistress"
+      }
+    ]
+  },
+  {
+    "id": 999,
+    "slug": "paurnamasi",
+    "title": "Paurnamasi",
+    "title_deva": null,
+    "summary": "A figure named among the residents of Vṛndāvana.",
+    "body": "Paurnamasi is named among the figures who appear in the pastimes of Vṛndāvana. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 1000,
+    "slug": "rohini",
+    "title": "Rohini",
+    "title_deva": null,
+    "summary": "A figure named among the residents of Vṛndāvana.",
+    "body": "Rohini is named among the figures who appear in the pastimes of Vṛndāvana. This is a short draft index entry; a fuller note can be added after review.",
+    "source_ref": "",
+    "status": "draft",
+    "relations": []
+  },
+  {
+    "id": 1001,
+    "slug": "vicaksana-suka",
+    "title": "Vicaksana suka",
+    "title_deva": null,
+    "summary": "A figure named among the residents of Vṛndāvana.",
+    "body": "Vicaksana suka is named among the figures who appear in the pastimes of Vṛndāvana. This is a short draft index entry; a fuller note can be added after review.",
     "source_ref": "",
     "status": "draft",
     "relations": []
