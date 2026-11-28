@@ -25,8 +25,9 @@ Content lives in `content/en/` as three JSON files: `people.json`,
 - Each record needs a unique integer `id`, a unique `slug`, `title`, `summary`,
   `body` (paragraphs separated by a blank line) and `status`. `source_ref` is
   optional and may contain only a precise shastra citation such as
-  `Śrīmad-Bhāgavatam 4.8–4.12`; references to user notes, books, itineraries or
-  websites are not shown in the app.
+  `Śrīmad-Bhāgavatam 4.8–4.12` or `Caitanya-caritāmṛta Ādi-līlā 1; 7.18–19`;
+  references to user notes, books, itineraries or websites are not shown in the
+  app.
 - Never reuse or renumber an `id`: saved items on users' phones refer to it.
 - `status` is `draft` until a knowledgeable reader has checked the entry; then
   change it to `reviewed` and the draft notice disappears from that page.

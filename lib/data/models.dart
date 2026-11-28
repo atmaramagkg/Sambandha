@@ -28,7 +28,8 @@ EntityKind? entityKindFromKey(String key) {
 }
 
 final _preciseShastraReference = RegExp(
-  r'^(?:Śrīmad-Bhāgavatam|Bhagavad-gītā)\s+\d',
+  r'^(?:Śrīmad-Bhāgavatam|Bhagavad-gītā)\s+\d'
+  r'|^Caitanya-caritāmṛta\s+(?:Ādi|Madhya|Antya)-līlā\s+\d',
 );
 
 /// Returns a reference only when it is a precise shastra citation.

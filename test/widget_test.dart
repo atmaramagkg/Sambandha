@@ -55,6 +55,10 @@ void main() {
       'Śrīmad-Bhāgavatam 4.8–4.12',
     );
     expect(preciseShastraReference('Bhagavad-gītā 1–2'), 'Bhagavad-gītā 1–2');
+    expect(
+      preciseShastraReference('Caitanya-caritāmṛta Ādi-līlā 1; 7.18–19'),
+      'Caitanya-caritāmṛta Ādi-līlā 1; 7.18–19',
+    );
     expect(preciseShastraReference('User-provided notes'), isNull);
     expect(preciseShastraReference(''), isNull);
   });

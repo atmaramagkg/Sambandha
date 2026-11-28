@@ -46,6 +46,7 @@ FORBIDDEN_SOURCE = re.compile(
 
 PRECISE_SHASTRA = re.compile(
     r"^(?:Śrīmad-Bhāgavatam|Bhagavad-gītā)\s+\d"
+    r"|^Caitanya-caritāmṛta\s+(?:Ādi|Madhya|Antya)-līlā\s+\d"
 )
 
 SCHEMA = """
